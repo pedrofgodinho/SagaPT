@@ -1,0 +1,6 @@
+run_id,endpoint,vulnerability,poc
+20260903-0828-0009,`GET /users?search=`,Reflected XSS,`<script>alert(1)</script>` reflected in `<h6>0 matches for <script>alert(1)</script></h6>`
+20260903-0828-0009,`POST /create_post`,Stored XSS,`<script>alert(document.cookie)</script>` stored and reflected unescaped in post card body
+20260903-0828-0009,`POST /edit_post`,Stored XSS,`<script>alert(document.cookie)</script>` stored and reflected unescaped in post card body
+20260903-0828-0009,`POST /settings`,"Stored XSS (name, bio)",`<script>alert(document.cookie)</script>` stored in `name`/`bio` and reflected on profile page
+20260903-0828-0009,`POST /request_friend`,Reflected XSS,`<script>alert(1)</script>` reflected in error message as `@<script>alert(1)</script> does not exist`

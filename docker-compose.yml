@@ -1,0 +1,87 @@
+services:
+  hackergram:
+    image: pimz23/hackergram-simple
+    container_name: hackergram_target
+    ports:
+      - "127.0.0.1:8000:80"
+    networks:
+      saga-net:
+        aliases:
+          - hackergram.com
+          - www.hackergram.com
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost/')",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa_target
+    ports:
+      - "127.0.0.1:8001:80"
+    networks:
+      saga-net:
+        aliases:
+          - dvwa.local
+    healthcheck:
+      # No python3/curl/wget in this image — only php-cli is available.
+      test:
+        [
+          "CMD",
+          "php",
+          "-r",
+          "exit(@file_get_contents('http://localhost/login.php') === false ? 1 : 0);",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  juiceshop:
+    image: bkimminich/juice-shop
+    container_name: juiceshop_target
+    ports:
+      - "127.0.0.1:3001:3000"
+    networks:
+      saga-net:
+        aliases:
+          - juiceshop.local
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://localhost:3000/rest/admin/application-version', r => process.exit(r.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ZAP is no longer a long-running service here — every SagaPT run gets its
+  # own ephemeral ZAP container spawned by `saga/src/tools/zap_launcher.py`
+  # (labelled sagapt.role=zap, joined to `saga-net`, port OS-assigned).  See
+  # obsidian/Architecture/Per-Run ZAP Launcher.md for the lifecycle.
+  frontend:
+    build: ./frontend
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      - ORIGIN=http://localhost:3000
+      - PUBLIC_API_BASE=http://localhost:8080
+    networks:
+      - saga-net
+
+networks:
+  saga-net:
+    driver: bridge
+    name: saga-net

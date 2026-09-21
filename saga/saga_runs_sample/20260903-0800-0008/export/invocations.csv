@@ -1,0 +1,10 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and login,2026-09-03T08:01:17.818525+00:00,2026-09-03T08:03:46.245608+00:00,148.427083,19,24,1,1,0,0,False,369995,6815,279619,0,376810
+1,dast,XSS test on profile friends direct_messages requests,2026-09-03T08:04:02.257306+00:00,2026-09-03T08:06:33.167158+00:00,150.909852,13,22,2,2,0,0,False,339418,7674,261700,0,347092
+2,dast,XSS test on messages friends login edit_post delete_post,2026-09-03T08:06:41.718433+00:00,2026-09-03T08:08:47.200408+00:00,125.481975,13,21,1,1,0,0,False,243365,6662,187245,0,250027
+3,dast,XSS test on settings direct_messages request_friend remove_friend remove_request,2026-09-03T08:08:54.622401+00:00,2026-09-03T08:11:23.890231+00:00,149.26783,9,20,1,2,0,0,False,233437,8639,187122,0,242076
+4,dast,XSS test on settings multipart form,2026-09-03T08:11:32.124673+00:00,2026-09-03T08:15:01.094801+00:00,208.970128,24,40,4,0,0,0,False,752384,8960,606644,0,761344
+5,dast,XSS test on settings multipart form with correct password,2026-09-03T08:15:08.732862+00:00,2026-09-03T08:19:40.767611+00:00,272.034749,10,21,1,1,0,0,False,198121,17313,146162,0,215434
+6,exploitation,Exploitation of stored XSS in create_post,2026-09-03T08:19:54.819458+00:00,2026-09-03T08:23:36.261659+00:00,221.442201,10,24,2,1,0,0,False,331610,12451,240357,0,344061
+7,exploitation,Exploitation of reflected XSS in users search,2026-09-03T08:23:42.702713+00:00,2026-09-03T08:25:49.298372+00:00,126.595659,9,17,1,1,0,0,False,209778,6722,145745,0,216500
+8,exploitation,Exploitation of reflected XSS in request_friend,2026-09-03T08:25:55.624594+00:00,2026-09-03T08:27:51.793334+00:00,116.16874,9,15,1,1,0,0,False,198445,6172,143161,0,204617

@@ -1,0 +1,7 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and login,2026-09-03T09:18:43.798125+00:00,2026-09-03T09:21:01.278561+00:00,137.480436,21,23,1,1,0,0,False,250222,6327,184588,0,256549
+1,dast,DAST XSS on profile and username parameters,2026-09-03T09:21:14.043126+00:00,2026-09-03T09:22:39.896208+00:00,85.853082,12,17,1,0,0,0,False,259275,3652,194720,0,262927
+2,dast,DAST XSS on search parameters,2026-09-03T09:22:47.012350+00:00,2026-09-03T09:24:27.466256+00:00,100.453906,6,13,1,1,0,0,False,150700,5349,96855,0,156049
+3,dast,DAST XSS on create_post endpoint,2026-09-03T09:24:34.718199+00:00,2026-09-03T09:26:01.127339+00:00,86.40914,7,14,1,1,0,0,False,152340,4235,95335,0,156575
+4,dast,DAST XSS on settings endpoint,2026-09-03T09:26:06.450816+00:00,2026-09-03T09:27:51.240512+00:00,104.789696,8,16,1,2,0,0,False,180055,5562,128785,0,185617
+5,dast,DAST XSS on edit_post and signup endpoints,2026-09-03T09:27:58.463173+00:00,,,17,28,2,0,0,0,False,484708,19175,390821,0,503883

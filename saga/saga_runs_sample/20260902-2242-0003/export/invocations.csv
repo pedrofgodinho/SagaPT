@@ -1,0 +1,7 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and login,2026-09-02T22:43:16.480196+00:00,2026-09-02T22:45:10.496331+00:00,114.016135,14,17,1,1,0,0,False,234902,4838,143856,0,239740
+1,dast,DAST GET endpoints profile friends direct_messages users messages,2026-09-02T22:45:20.554098+00:00,2026-09-02T22:46:41.412399+00:00,80.858301,7,16,1,4,0,0,False,127462,4181,83514,0,131643
+2,dast,DAST GET endpoints create_post edit_post delete_post,2026-09-02T22:46:45.376596+00:00,2026-09-02T22:48:08.567249+00:00,83.190653,8,17,1,2,0,0,False,109993,4109,53156,0,114102
+3,dast,DAST POST endpoints login signup create_post settings edit_post remove_friend remove_request request_friend,2026-09-02T22:48:14.203795+00:00,2026-09-02T22:52:32.957038+00:00,258.753243,20,36,4,3,0,0,False,810255,13145,686988,0,823400
+4,exploitation,Exploitation profile username SQLi,2026-09-02T22:52:44.106204+00:00,2026-09-02T22:57:52.748196+00:00,308.641992,41,52,2,1,0,0,False,1177859,11920,932591,0,1189779
+5,exploitation,Exploitation remaining SQLi endpoints,2026-09-02T22:58:06.047443+00:00,2026-09-02T23:12:13.350615+00:00,847.303172,61,75,4,1,0,0,False,1796072,42954,1477155,0,1839026

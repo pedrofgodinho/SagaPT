@@ -1,0 +1,5 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and login,2026-09-02T20:28:39.286901+00:00,2026-09-02T20:30:12.439821+00:00,93.15292,15,16,0,1,0,0,False,130178,4449,96780,0,134627
+1,dast,DAST on GET query parameters,2026-09-02T20:30:25.128190+00:00,2026-09-02T20:31:55.686503+00:00,90.558313,8,18,1,5,0,0,False,152626,4372,103059,0,156998
+2,dast,DAST on remaining endpoints,2026-09-02T20:32:04.027790+00:00,2026-09-02T20:34:58.686335+00:00,174.658545,21,43,1,10,0,0,False,281755,8030,180201,0,289785
+3,exploitation,Exploitation of SQLi - schema extraction and admin password,2026-09-02T20:35:07.247155+00:00,2026-09-02T20:43:15.260186+00:00,488.013031,50,81,3,13,0,0,False,1270595,21862,1044355,0,1292457

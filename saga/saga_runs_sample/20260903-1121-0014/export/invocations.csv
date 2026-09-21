@@ -1,0 +1,11 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and login,2026-09-03T11:21:56.035199+00:00,2026-09-03T11:24:08.926832+00:00,132.891633,18,23,1,1,0,0,False,297255,5713,201312,0,302968
+1,dast,DAST user-related GET parameters,2026-09-03T11:24:29.794506+00:00,2026-09-03T11:27:05.375360+00:00,155.580854,18,24,2,2,0,0,False,475902,7087,373571,0,482989
+2,dast,DAST posts messages and post management params,2026-09-03T11:27:10.742645+00:00,2026-09-03T11:29:06.001902+00:00,115.259257,18,23,1,0,0,0,False,131178,5471,56334,0,136649
+3,dast,DAST POST login signup create_post,2026-09-03T11:29:12.600326+00:00,2026-09-03T11:31:42.239409+00:00,149.639083,13,23,2,1,0,0,False,446624,6862,339390,0,453486
+4,dast,DAST POST edit_post settings friend_requests DM,2026-09-03T11:31:47.841287+00:00,2026-09-03T11:34:24.344822+00:00,156.503535,14,27,2,2,0,0,False,541098,7169,435614,0,548267
+5,exploitation,Exploitation of stored XSS in create_post,2026-09-03T11:34:50.397503+00:00,2026-09-03T11:38:53.975552+00:00,243.578049,21,26,2,1,0,0,False,544360,12840,438378,0,557200
+6,exploitation,Exploitation of stored XSS in edit_post,2026-09-03T11:38:58.915249+00:00,2026-09-03T11:40:41.481284+00:00,102.566035,9,14,1,1,0,0,False,178658,5180,119889,0,183838
+7,exploitation,Exploitation of reflected XSS in users search,2026-09-03T11:40:47.915989+00:00,2026-09-03T11:42:45.030527+00:00,117.114538,6,13,1,1,0,0,False,158425,6586,107539,0,165011
+8,exploitation,Exploitation of reflected XSS in friends search,2026-09-03T11:42:50.385838+00:00,2026-09-03T11:44:40.682720+00:00,110.296882,7,14,1,1,0,0,False,143078,5856,79725,0,148934
+9,exploitation,Exploitation of reflected XSS in request_friend,2026-09-03T11:44:46.226350+00:00,2026-09-03T11:48:39.630085+00:00,233.403735,23,27,2,1,0,0,False,377054,11472,244334,0,388526

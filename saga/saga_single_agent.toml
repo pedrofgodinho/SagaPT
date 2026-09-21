@@ -1,0 +1,78 @@
+# Single-agent baseline configuration for comparison against the multi-agent
+# architecture.  One monolithic agent does recon + DAST + exploitation in a
+# single context window, demonstrating the limitations that motivated the
+# multi-agent design.
+#
+# Usage:
+#   SAGA_CONFIG=saga_single_agent.toml just serve
+# or:
+#   cd saga && SAGA_CONFIG=saga_single_agent.toml uv run python src/main.py serve
+
+[general]
+target = "http://www.hackergram.com"
+run_timeout_s = 3600
+token_budget = 10000000
+
+[summarizer]
+model_provider = "llamacpp"
+model_name = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+temperature = 0.6
+model_kwargs = {}
+
+[summarizer.prompts]
+system = "./prompts/summarizer/system.md"
+human = "./prompts/summarizer/human.md"
+
+[zap]
+context_name = "sagapt"
+include = ["\\Qhttp://www.hackergram.com\\E.*", "\\Qhttp://hackergram.com\\E.*"]
+exclude = []
+spider_exclude = ["*leaderboard*"]
+
+[targets.hackergram]
+label = "Hackergram"
+target = "http://www.hackergram.com"
+zap_include = ["\\Qhttp://www.hackergram.com\\E.*", "\\Qhttp://hackergram.com\\E.*"]
+zap_exclude = []
+zap_spider_exclude = ["*leaderboard*"]
+human_prompt = "./prompts/planner/human_single.md"
+
+[targets.dvwa]
+label = "DVWA"
+target = "http://dvwa.local"
+zap_include = ["\\Qhttp://dvwa.local\\E.*"]
+zap_exclude = []
+zap_spider_exclude = ["*logout.php*", "*setup.php*"]
+human_prompt = "./prompts/planner/human_dvwa.md"
+
+[planner]
+model_provider = "llamacpp"
+model_name = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+temperature = 0.6
+model_kwargs = {}
+
+[planner.prompts]
+system = "./prompts/planner/system_single.md"
+human = "./prompts/planner/human_single.md"
+
+[agents.single]
+name = "single_agent"
+tools = [
+  { name = "http_get" },
+  { name = "http_post" },
+  { name = "register_credentials" },
+  { name = "spider" },
+  { name = "login" },
+  { name = "logout" },
+]
+description = "A single penetration testing agent that handles the complete assessment: reconnaissance (mapping the attack surface, setting up authentication), vulnerability detection (testing for SQL injection, XSS, broken access control, path traversal), and exploitation (extracting data, crafting PoC payloads, enumerating scope). Has all scanning tools available."
+model_provider = "llamacpp"
+model_name = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+temperature = 0.6
+model_kwargs = {}
+reflection_interval = 10
+max_tool_calls = 80
+
+[agents.single.prompts]
+system = "./prompts/agents/single/system.md"
+human = "./prompts/agents/single/human.md"

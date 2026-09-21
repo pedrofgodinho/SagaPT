@@ -1,0 +1,1 @@
+[{"method": "POST", "evidence": "You have an error in your SQL syntax", "pluginId": "90022", "confidence": "Medium", "url": "http://www.hackergram.com/settings", "param": "", "attack": "", "name": "Application Error Disclosure", "risk": "Medium"}]

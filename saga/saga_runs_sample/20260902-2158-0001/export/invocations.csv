@@ -1,0 +1,6 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and authentication,2026-09-02T21:58:23.117621+00:00,2026-09-02T22:00:26.034945+00:00,122.917324,19,20,1,1,0,0,False,188908,4690,80187,0,193598
+1,dast,DAST on profile/users/posts/messages search params,2026-09-02T22:00:39.456871+00:00,2026-09-02T22:01:47.296105+00:00,67.839234,6,13,1,2,0,0,False,110117,3350,73468,0,113467
+2,dast,DAST on friends/requests/post IDs/DM/friend endpoints,2026-09-02T22:01:53.005988+00:00,2026-09-02T22:05:52.436826+00:00,239.430838,20,38,2,6,0,0,False,613555,11871,492231,0,625426
+3,dast,DAST on login/signup/create/edit/settings endpoints,2026-09-02T22:05:57.372063+00:00,2026-09-02T22:12:03.961207+00:00,366.589144,33,51,4,3,0,0,False,1179719,16668,966443,0,1196387
+4,exploitation,Exploitation of SQLi to extract admin password,2026-09-02T22:12:17.947491+00:00,2026-09-02T22:18:26.605833+00:00,368.658342,34,56,4,9,0,0,False,1105723,16790,900956,0,1122513

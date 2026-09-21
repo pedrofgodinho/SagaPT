@@ -1,0 +1,2 @@
+run_id,name,target,status,started_at,ended_at,duration_s,num_agent_invocations,invocation_sequence,total_llm_calls,total_tool_calls,total_kb_findings_registered,total_reflections,total_retries,num_hit_hard_cap,total_input_tokens,total_output_tokens,total_cached_input_tokens,total_reasoning_tokens,total_tokens,num_findings
+20260902-2313-0004,SQLi #10,http://www.hackergram.com,completed,2026-09-02T23:13:12.129259+00:00,2026-09-02T23:33:36.208810+00:00,1224.079551,7,"recon,dast,dast,dast,dast,dast,exploitation",149,107,21,12,0,0,3455221,57547,2779959,0,3512768,18

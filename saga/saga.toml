@@ -1,0 +1,177 @@
+[general]
+target = "http://www.hackergram.com"
+# Per-run safety limits. Both are optional; unset / 0 disables that cap.
+# XBOW benchmarks (or any run at all) that get into an infinite planning
+# loop or a runaway agent will otherwise burn tokens until noticed.
+run_timeout_s = 14400    # 60 min wall-clock cap
+token_budget = 100000000 # 10M total tokens across all AI events in the run (typical runs land around 2M+)
+
+# --- Provider selection -------------------------------------------------------
+# Each model-bearing section below (summarizer, planner, agents.*) picks its own
+# provider via `model_provider`. Three real providers are supported: "google"
+# (Vertex AI Gemini, the default here), "ollama" (local models), and "llamacpp"
+# (llama.cpp's llama-server via its OpenAI-compatible API). All local models must
+# be TOOL-CAPABLE — agents call tools and the summarizer uses structured output.
+#
+# Ollama example:
+#   model_provider = "ollama"
+#   model_name     = "llama3.1"   # e.g. llama3.1, qwen2.5, mistral-nemo
+#   temperature    = 0
+#   model_kwargs   = {}           # Gemini keys (thinking_level, include_thoughts)
+#                                 # do NOT apply; use Ollama kwargs like num_ctx here
+#   # Server URL from OLLAMA_BASE_URL (default http://localhost:11434).
+#
+# llama.cpp example (run the server with `just llama <hf-model> <ctx>`):
+#   model_provider = "llamacpp"
+#   model_name     = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"  # the loaded model
+#   temperature    = 0.6          # per-request temp OVERRIDES llama-server's --temp,
+#                                 # so set what the model wants (Qwen3: 0.6, not 0);
+#                                 # top_p/top_k stay at the server's launch values
+#   model_kwargs   = {}
+#   # Server URL from LLAMACPP_BASE_URL (default http://localhost:8081/v1);
+#   # requires llama-server started with --jinja for tool calling.
+#
+# ACTIVE LOCAL BASELINE (>1 year old, benchmarked against the current Qwen3.6):
+# the five sections below run Gemma 3 12B via OLLAMA, not llama.cpp. The current
+# llama.cpp build's tool-call parser can't drive these models agentically — it
+# 500-crashes on Llama 3.1's multi-tool-call output ("peg-native format" error)
+# and doesn't parse Gemma 3's tool_code blocks — whereas Ollama's per-model tool
+# parsers handle both cleanly. Qwen3.6 still runs fine on llama.cpp (`just llama-qwen`).
+# Pull the models with `just ollama-llama3` / `just ollama-gemma3`.
+#
+# num_ctx is 65536 (64k), the verified-fully-GPU ceiling on 16 GB VRAM for both models —
+# NOT 131072 (128k): both models are rated for 128k, but even with every optimization
+# below, loading either at 128k saturates the whole 16 GB card (<1 GB free system-wide),
+# too risky for the growing multi-turn prompts a real agent run produces. This requires
+# the Ollama SERVER (not saga.toml) to run with OLLAMA_FLASH_ATTENTION=1 and
+# OLLAMA_KV_CACHE_TYPE=q8_0 (set as persistent user env vars, applied 2026-09-01) —
+# without them Llama 3.1 spills ~3 GB to CPU RAM at 64k (still works, just slower);
+# Gemma 3 doesn't need them for 64k (its sliding-window attention keeps KV cache cheap
+# regardless), but they don't hurt it either. Verify a fresh machine has them set with
+# `ollama.exe` (as user) — no `env | grep OLLAMA` equivalent without shelling into the
+# process; behavioral check: load a model at 65536 and confirm `size_vram == size` via
+# `curl localhost:11434/api/ps`.
+#
+# To benchmark Llama 3.1 8B instead, set in ALL five sections below:
+#   model_provider = "ollama"
+#   model_name     = "llama3.1:8b-instruct-q8_0"
+#   temperature    = 0.6
+#   model_kwargs   = { num_ctx = 65536 }
+# ------------------------------------------------------------------------------
+
+[summarizer]
+model_provider = "llamacpp"
+model_name = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+temperature = 0.6
+model_kwargs = {}
+
+[summarizer.prompts]
+system = "./prompts/summarizer/system.md"
+human = "./prompts/summarizer/human.md"
+
+[zap]
+context_name = "sagapt"
+include = ["\\Qhttp://www.hackergram.com\\E.*", "\\Qhttp://hackergram.com\\E.*"]
+exclude = []
+# Regex patterns for endpoints the spider must never crawl.
+# Applied via ZAP's spider exclusion list before each spider run, in addition
+# to the context-level exclude patterns above.  Use these for destructive or
+# session-breaking endpoints (logout, delete, admin reset, etc.).
+spider_exclude = [
+    "*leaderboard*",
+]
+
+[targets.hackergram]
+label = "Hackergram"
+target = "http://www.hackergram.com"
+zap_include = ["\\Qhttp://www.hackergram.com\\E.*", "\\Qhttp://hackergram.com\\E.*"]
+zap_exclude = []
+zap_spider_exclude = ["*leaderboard*"]
+
+[targets.dvwa]
+label = "DVWA"
+target = "http://dvwa.local"
+zap_include = ["\\Qhttp://dvwa.local\\E.*"]
+zap_exclude = []
+# logout.php breaks the session mid-crawl; setup.php resets the database.
+zap_spider_exclude = ["*logout.php*", "*setup.php*"]
+human_prompt = "./prompts/planner/human_dvwa.md"
+
+[targets.juiceshop]
+label = "OWASP Juice Shop"
+target = "http://juiceshop.local:3000"
+zap_include = ["\\Qhttp://juiceshop.local:3000\\E.*"]
+zap_exclude = []
+zap_spider_exclude = ["*socket.io*", "*metrics*"]
+human_prompt = "./prompts/planner/human_juiceshop.md"
+
+[planner]
+model_provider = "llamacpp"
+model_name = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+temperature = 0.6
+model_kwargs = {}
+
+[planner.prompts]
+system = "./prompts/planner/system.md"
+human = "./prompts/planner/human.md"
+
+
+[agents.recon]
+name = "recon_agent"
+tools = [
+  { name = "http_get"},
+  { name = "http_post"},
+  { name = "register_credentials" },
+  { name = "spider"},
+]
+description = "An agent responsible for mapping the attack surface of the target: exploring pages and functionality, identifying technologies, discovering input points, and setting up authentication."
+model_provider = "llamacpp"
+model_name = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+temperature = 0.6
+model_kwargs = {}
+reflection_interval = 8
+max_tool_calls = 28
+
+[agents.recon.prompts]
+system = "./prompts/agents/recon/system.md"
+human = "./prompts/agents/recon/human.md"
+
+[agents.dast]
+name = "dast_agent"
+tools = [
+  { name = "http_get"},
+  { name = "http_post"},
+  { name = "login" },
+  { name = "logout" },
+]
+description = "An agent responsible for actively testing the web application for vulnerabilities by sending crafted payloads (SQLi, XSS, broken access control, etc.)."
+model_provider = "llamacpp"
+model_name = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+temperature = 0.6
+model_kwargs = {}
+reflection_interval = 8
+max_tool_calls = 28
+
+[agents.dast.prompts]
+system = "./prompts/agents/dast/system.md"
+human = "./prompts/agents/dast/human.md"
+
+[agents.exploitation]
+name = "exploitation_agent"
+tools = [
+  { name = "http_get"},
+  { name = "http_post"},
+  { name = "login" },
+  { name = "logout" },
+]
+description = "Exploitation agent. Takes confirmed vulnerabilities from DAST and develops their full impact chain: SQLi schema/data extraction, realistic XSS payloads, broken-access-control enumeration, and path traversal file reads. Always reads dast/findings/ first; stores results under exploitation/findings/. Dispatch after DAST has confirmed a vulnerability."
+model_provider = "llamacpp"
+model_name = "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M"
+temperature = 0.6
+model_kwargs = {}
+reflection_interval = 8
+max_tool_calls = 28
+
+[agents.exploitation.prompts]
+system = "./prompts/agents/exploitation/system.md"
+human = "./prompts/agents/exploitation/human.md"

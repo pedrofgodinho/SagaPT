@@ -1,0 +1,189 @@
+order_index,call_type,agent,execution_name,model_name,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens,retry_count,has_content,tool_calls,tool_durations,ts
+0,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,2930,373,945,0,3303,0,True,[],[],2026-09-03T06:58:11.180634+00:00
+1,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3770,200,0,0,3970,0,True,"[""kb_list_dir""]",[0.005096],2026-09-03T06:58:15.702497+00:00
+2,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3850,156,3766,0,4006,0,True,"[""spider"", ""spider""]","[3.11847, 0.001685]",2026-09-03T06:58:18.376217+00:00
+3,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5202,340,3846,0,5542,0,True,"[""http_get"", ""http_get"", ""http_get"", ""http_get""]","[1.172909, 5.4e-05, 0.001133, 3.7e-05]",2026-09-03T06:58:27.089424+00:00
+4,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7591,224,5198,0,7815,0,True,"[""register_credentials"", ""register_credentials""]","[0.231086, 0.001485]",2026-09-03T06:58:32.607625+00:00
+5,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7830,212,7587,0,8042,0,True,"[""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get""]","[1.680949, 5.3e-05, 1.3e-05, 0.001452, 2.6e-05, 1.3e-05]",2026-09-03T06:58:36.452433+00:00
+6,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11274,335,7826,0,11609,0,True,"[""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get""]","[2.246636, 7.5e-05, 6.5e-05, 4e-05, 0.001301, 4.4e-05, 3.3e-05, 1.6e-05]",2026-09-03T06:58:44.303828+00:00
+7,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,19815,425,11270,0,20240,0,True,"[""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get""]","[3.781622, 0.000101, 5.5e-05, 6.2e-05, 0.001584, 7.3e-05, 3.3e-05, 3e-05]",2026-09-03T06:58:55.777370+00:00
+8,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,31348,258,19811,0,31606,0,True,"[""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get""]","[1.669105, 8.2e-05, 4.6e-05, 0.001559, 4.5e-05, 3.1e-05]",2026-09-03T06:59:07.509360+00:00
+9,reflect,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,36280,948,0,0,37228,0,True,[],[],2026-09-03T06:59:35.429946+00:00
+10,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,39113,69,0,0,39182,0,False,"[""kb_list_dir""]",[0.004701],2026-09-03T06:59:49.155810+00:00
+11,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,39161,1502,39109,0,40663,0,True,"[""register_finding""]",[0.006591],2026-09-03T07:00:13.084981+00:00
+12,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,40677,57,39157,0,40734,0,False,"[""kb_get""]",[0.005389],2026-09-03T07:00:14.948413+00:00
+13,agent,recon,Initial recon and login,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,42158,629,40673,0,42787,0,True,[],[],2026-09-03T07:00:25.741823+00:00
+14,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3639,86,2926,0,3725,0,True,[],[],2026-09-03T07:00:27.799635+00:00
+15,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5141,756,3635,0,5897,0,True,[],[],2026-09-03T07:00:39.083332+00:00
+16,agent,dast,XSS test on GET query parameters,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3442,188,0,0,3630,0,True,"[""kb_list_dir"", ""kb_list_dir"", ""kb_list_dir""]","[0.007441, 0.000709, 3.1e-05]",2026-09-03T07:00:43.269835+00:00
+17,agent,dast,XSS test on GET query parameters,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3609,106,3438,0,3715,0,True,"[""kb_get"", ""kb_get""]","[0.004573, 4.4e-05]",2026-09-03T07:00:45.277407+00:00
+18,agent,dast,XSS test on GET query parameters,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5448,204,3605,0,5652,0,True,"[""login"", ""login""]","[0.079265, 0.00124]",2026-09-03T07:00:49.025297+00:00
+19,agent,dast,XSS test on GET query parameters,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5599,304,5444,0,5903,0,True,"[""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get""]","[2.200375, 5.3e-05, 3.2e-05, 2.5e-05, 0.001398, 3.2e-05, 2.2e-05, 1.8e-05]",2026-09-03T07:00:53.928423+00:00
+20,agent,dast,XSS test on GET query parameters,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,10998,890,5595,0,11888,0,True,"[""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get"", ""http_get""]","[1.598342, 5.5e-05, 1.8e-05, 0.001866, 3.1e-05, 1.6e-05]",2026-09-03T07:01:10.767240+00:00
+21,agent,dast,XSS test on GET query parameters,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14014,1542,10994,0,15556,0,True,"[""register_finding""]",[0.00605],2026-09-03T07:01:35.977887+00:00
+22,agent,dast,XSS test on GET query parameters,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14646,430,14010,0,15076,0,True,[],[],2026-09-03T07:01:42.828576+00:00
+23,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5953,434,5137,0,6387,0,True,[],[],2026-09-03T07:01:49.812930+00:00
+24,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3507,286,0,0,3793,0,True,"[""kb_list_dir"", ""kb_list_dir"", ""kb_list_dir""]","[0.00697, 0.00019, 2.9e-05]",2026-09-03T07:01:55.463179+00:00
+25,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3691,121,3503,0,3812,0,False,"[""kb_get"", ""kb_get"", ""kb_get""]","[0.006848, 0.000463, 4.8e-05]",2026-09-03T07:01:57.786348+00:00
+26,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5870,256,3687,0,6126,0,True,"[""login"", ""login""]","[0.082457, 0.001236]",2026-09-03T07:02:02.512996+00:00
+27,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6052,257,5866,0,6309,0,True,"[""http_post"", ""http_post""]","[0.587239, 0.001238]",2026-09-03T07:02:06.828717+00:00
+28,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,9024,297,6048,0,9321,0,True,"[""http_post"", ""http_post""]","[0.551658, 0.001418]",2026-09-03T07:02:12.938252+00:00
+29,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11806,176,9020,0,11982,0,True,"[""kb_list_dir"", ""kb_list_dir""]","[0.009112, 4.7e-05]",2026-09-03T07:02:17.305408+00:00
+30,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11929,36,11802,0,11965,0,False,"[""kb_list_dir""]",[0.00392],2026-09-03T07:02:18.389934+00:00
+31,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11984,79,11925,0,12063,0,False,"[""kb_list_dir""]",[0.004875],2026-09-03T07:02:20.035730+00:00
+32,reflect,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,10433,214,0,0,10647,0,True,[],[],2026-09-03T07:02:26.756759+00:00
+33,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,12505,58,1459,0,12563,0,False,"[""kb_get""]",[0.003802],2026-09-03T07:02:31.608612+00:00
+34,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,12588,107,12501,0,12695,0,True,"[""kb_get""]",[0.003974],2026-09-03T07:02:33.645438+00:00
+35,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,13648,430,12584,0,14078,0,True,"[""kb_get""]",[0.004025],2026-09-03T07:02:40.429524+00:00
+36,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,13752,217,13644,0,13969,0,True,"[""http_post"", ""http_post""]","[0.594976, 0.00135]",2026-09-03T07:02:44.061082+00:00
+37,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,16773,241,13748,0,17014,0,True,"[""http_post"", ""http_post""]","[0.5695, 0.001135]",2026-09-03T07:02:49.444292+00:00
+38,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,18835,307,16769,0,19142,0,True,"[""http_post"", ""http_post""]","[0.573019, 0.00137]",2026-09-03T07:02:55.467726+00:00
+39,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,20863,167,18831,0,21030,0,True,"[""http_post"", ""http_post""]","[0.579187, 0.001329]",2026-09-03T07:02:59.414529+00:00
+40,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,22795,363,20859,0,23158,0,True,"[""http_post"", ""http_post""]","[0.550847, 0.001174]",2026-09-03T07:03:06.216432+00:00
+41,reflect,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,22869,400,10429,0,23269,0,True,[],[],2026-09-03T07:03:17.025771+00:00
+42,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,24983,164,10457,0,25147,0,False,"[""http_post"", ""http_post""]","[0.556857, 0.001289]",2026-09-03T07:03:24.750821+00:00
+43,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,26898,207,24979,0,27105,0,True,"[""http_post"", ""http_post""]","[0.575054, 0.001247]",2026-09-03T07:03:29.308568+00:00
+44,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,28834,299,26894,0,29133,0,True,"[""http_post"", ""http_post""]","[0.591325, 0.001407]",2026-09-03T07:03:35.311652+00:00
+45,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,32055,439,28830,0,32494,0,True,"[""register_finding""]",[0.005229],2026-09-03T07:03:43.947350+00:00
+46,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,32380,220,32051,0,32600,0,True,"[""http_post"", ""http_post""]","[0.594886, 0.001358]",2026-09-03T07:03:47.901986+00:00
+47,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,35590,333,32376,0,35923,0,True,"[""register_finding""]",[0.00772],2026-09-03T07:03:55.085179+00:00
+48,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,35901,157,35586,0,36058,0,True,"[""http_post"", ""http_post""]","[0.570909, 0.001356]",2026-09-03T07:03:58.152142+00:00
+49,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,37856,440,35897,0,38296,0,True,"[""http_post"", ""http_post""]","[0.588802, 0.001397]",2026-09-03T07:04:06.452467+00:00
+50,reflect,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,38967,849,22865,0,39816,0,True,[],[],2026-09-03T07:04:25.839095+00:00
+51,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,41289,134,22935,0,41423,0,False,"[""http_post"", ""http_post""]","[0.555393, 0.001483]",2026-09-03T07:04:34.678737+00:00
+52,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,43210,213,41285,0,43423,0,True,"[""http_post"", ""http_post""]","[0.574027, 0.001437]",2026-09-03T07:04:39.574822+00:00
+53,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,45149,194,43206,0,45343,0,True,"[""http_post"", ""http_post""]","[0.551007, 0.001641]",2026-09-03T07:04:44.273487+00:00
+54,agent,dast,XSS test on POST form fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,47077,655,45145,0,47732,0,True,[],[],2026-09-03T07:04:56.188172+00:00
+55,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6867,813,5949,0,7680,0,True,[],[],2026-09-03T07:05:08.186488+00:00
+56,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3468,142,0,0,3610,0,True,"[""kb_list_dir"", ""kb_list_dir""]","[0.005677, 3e-05]",2026-09-03T07:05:11.706074+00:00
+57,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3611,165,3464,0,3776,0,False,"[""kb_get"", ""kb_get"", ""kb_get"", ""kb_get""]","[0.007774, 9.8e-05, 0.000891, 0.000617]",2026-09-03T07:05:14.527646+00:00
+58,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5894,91,3607,0,5985,0,True,"[""kb_get""]",[0.003709],2026-09-03T07:05:16.926233+00:00
+59,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6300,458,5890,0,6758,0,True,"[""http_post"", ""http_post""]","[0.565236, 0.000957]",2026-09-03T07:05:23.827787+00:00
+60,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,9404,568,6296,0,9972,0,True,"[""http_post"", ""http_post""]","[0.56318, 0.000966]",2026-09-03T07:05:33.661863+00:00
+61,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,12328,315,9400,0,12643,0,True,"[""http_get"", ""http_get""]","[0.54416, 0.001052]",2026-09-03T07:05:39.921469+00:00
+62,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14570,242,12324,0,14812,0,True,"[""http_post"", ""http_post""]","[0.568171, 0.001014]",2026-09-03T07:05:45.071956+00:00
+63,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,17202,209,14566,0,17411,0,True,"[""http_post"", ""http_post""]","[0.577139, 0.001087]",2026-09-03T07:05:49.876128+00:00
+64,reflect,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,18567,520,0,0,19087,0,True,[],[],2026-09-03T07:06:03.859972+00:00
+65,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,20774,148,0,0,20922,0,False,"[""http_get"", ""http_get"", ""http_get"", ""http_get""]","[1.088225, 0.000111, 0.001179, 4.1e-05]",2026-09-03T07:06:12.812875+00:00
+66,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,24449,320,20770,0,24769,0,True,"[""http_get"", ""http_get"", ""http_get"", ""http_get""]","[1.090046, 4.8e-05, 0.001227, 3.3e-05]",2026-09-03T07:06:20.054599+00:00
+67,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,27107,790,24445,0,27897,0,True,"[""register_finding""]",[0.005479],2026-09-03T07:06:34.111795+00:00
+68,agent,dast,XSS test on login and friend request fields,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,27579,675,27103,0,28254,0,True,[],[],2026-09-03T07:06:44.722329+00:00
+69,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7768,722,6863,0,8490,0,True,[],[],2026-09-03T07:06:55.555959+00:00
+70,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7885,1452,7764,0,9337,0,True,[],[],2026-09-03T07:07:16.112086+00:00
+71,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3535,137,0,0,3672,0,True,"[""kb_list_dir"", ""kb_list_dir""]","[0.00519, 0.000234]",2026-09-03T07:07:19.559481+00:00
+72,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3684,219,3531,0,3903,0,False,"[""kb_get"", ""kb_get"", ""kb_get"", ""kb_get"", ""kb_get""]","[0.008002, 0.000533, 4.1e-05, 0.000485, 0.000269]",2026-09-03T07:07:23.040700+00:00
+73,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6202,190,3680,0,6392,0,True,"[""kb_get""]",[0.003597],2026-09-03T07:07:26.852413+00:00
+74,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6582,353,6198,0,6935,0,True,"[""login"", ""login""]","[0.082067, 0.001056]",2026-09-03T07:07:32.304297+00:00
+75,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6756,121,6578,0,6877,0,True,"[""http_get"", ""http_get""]","[0.547344, 0.000889]",2026-09-03T07:07:34.655302+00:00
+76,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7139,177,6752,0,7316,0,True,"[""http_get"", ""http_get""]","[0.548086, 0.000937]",2026-09-03T07:07:38.311511+00:00
+77,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,8056,200,7135,0,8256,0,True,"[""http_get"", ""http_get""]","[0.556884, 0.001659]",2026-09-03T07:07:42.324676+00:00
+78,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,8970,233,8052,0,9203,0,True,"[""http_get"", ""http_get""]","[0.558416, 0.001028]",2026-09-03T07:07:46.884478+00:00
+79,reflect,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,9350,1446,0,0,10796,0,True,[],[],2026-09-03T07:08:10.632892+00:00
+80,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11671,453,1487,0,12124,0,True,"[""http_post"", ""http_post""]","[0.556959, 0.001127]",2026-09-03T07:08:20.528119+00:00
+81,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14439,321,11667,0,14760,0,True,"[""kb_list_dir""]",[0.004745],2026-09-03T07:08:26.899474+00:00
+82,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14508,627,14435,0,15135,0,True,"[""http_post"", ""http_post""]","[0.570884, 0.001063]",2026-09-03T07:08:36.256136+00:00
+83,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,16484,1164,14504,0,17648,0,True,"[""kb_list_dir""]",[0.004213],2026-09-03T07:08:54.174739+00:00
+84,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,16637,444,16480,0,17081,0,True,"[""kb_list_dir""]",[0.004964],2026-09-03T07:09:01.035448+00:00
+85,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,16705,73,16633,0,16778,0,False,"[""kb_list_dir""]",[0.004923],2026-09-03T07:09:02.640712+00:00
+86,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,17011,68,16701,0,17079,0,True,"[""kb_get""]",[0.004251],2026-09-03T07:09:04.228125+00:00
+87,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,17102,802,17007,0,17904,0,True,"[""kb_get""]",[0.005217],2026-09-03T07:09:16.155349+00:00
+88,reflect,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,16300,1022,9346,0,17322,0,True,[],[],2026-09-03T07:09:33.316586+00:00
+89,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,18493,257,11170,0,18750,0,True,"[""http_post"", ""http_post""]","[0.013838, 0.000961]",2026-09-03T07:09:39.745608+00:00
+90,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,18723,176,18489,0,18899,0,True,"[""http_post"", ""http_post""]","[0.550875, 0.001861]",2026-09-03T07:09:42.908226+00:00
+91,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,20702,269,18719,0,20971,0,True,"[""http_post"", ""http_post""]","[0.552928, 0.001252]",2026-09-03T07:09:48.291394+00:00
+92,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,22661,760,20698,0,23421,0,True,"[""http_post"", ""http_post""]","[0.570461, 0.001302]",2026-09-03T07:10:00.776729+00:00
+93,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,24593,4238,22657,0,28831,0,True,"[""kb_list_dir""]",[0.005298],2026-09-03T07:11:04.222301+00:00
+94,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,24727,1819,24589,0,26546,0,True,"[""kb_list_dir""]",[0.004648],2026-09-03T07:11:31.287793+00:00
+95,agent,dast,XSS test on remaining endpoints,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,25037,700,24723,0,25737,0,True,[],[],2026-09-03T07:11:42.153999+00:00
+96,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,8880,902,7881,0,9782,0,True,[],[],2026-09-03T07:11:55.520141+00:00
+97,agent,exploitation,Exploitation of users search XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3244,234,0,0,3478,0,True,"[""kb_get"", ""kb_get"", ""kb_list_dir""]","[0.006692, 0.000133, 0.000842]",2026-09-03T07:12:00.255608+00:00
+98,agent,exploitation,Exploitation of users search XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,4012,313,3240,0,4325,0,True,"[""http_get"", ""http_get""]","[0.571515, 0.000887]",2026-09-03T07:12:05.157601+00:00
+99,agent,exploitation,Exploitation of users search XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6260,572,4008,0,6832,0,True,"[""http_get"", ""http_get""]","[0.547676, 0.001119]",2026-09-03T07:12:14.682389+00:00
+100,agent,exploitation,Exploitation of users search XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,8515,2757,6256,0,11272,0,True,"[""http_get"", ""http_get""]","[0.546989, 0.000964]",2026-09-03T07:12:54.587176+00:00
+101,agent,exploitation,Exploitation of users search XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,10644,616,8511,0,11260,0,True,"[""http_get"", ""http_get""]","[0.547794, 0.000931]",2026-09-03T07:13:04.754221+00:00
+102,agent,exploitation,Exploitation of users search XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11985,1762,10640,0,13747,0,True,"[""register_finding""]",[0.005558],2026-09-03T07:13:30.726368+00:00
+103,agent,exploitation,Exploitation of users search XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,13136,72,11981,0,13208,0,True,"[""kb_get""]",[0.00453],2026-09-03T07:13:32.523350+00:00
+104,agent,exploitation,Exploitation of users search XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14206,737,13132,0,14943,0,True,[],[],2026-09-03T07:13:43.698889+00:00
+105,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,9646,332,8876,0,9978,0,True,[],[],2026-09-03T07:13:49.120620+00:00
+106,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3247,192,0,0,3439,0,False,"[""kb_get"", ""kb_get"", ""kb_list_dir""]","[0.006581, 3.8e-05, 0.000543]",2026-09-03T07:13:53.216960+00:00
+107,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3864,71,3243,0,3935,0,False,"[""kb_get""]",[0.003585],2026-09-03T07:13:54.837020+00:00
+108,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,4918,196,3860,0,5114,0,True,"[""kb_list_dir""]",[0.004287],2026-09-03T07:13:58.288860+00:00
+109,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5000,45,4914,0,5045,0,False,"[""kb_list_dir""]",[0.004035],2026-09-03T07:13:59.431088+00:00
+110,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5052,58,4996,0,5110,0,False,"[""kb_list_dir""]",[0.004078],2026-09-03T07:14:00.709592+00:00
+111,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5107,57,5048,0,5164,0,False,"[""kb_list_dir""]",[0.004557],2026-09-03T07:14:01.979034+00:00
+112,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5413,118,5103,0,5531,0,False,"[""kb_get""]",[0.004455],2026-09-03T07:14:04.164061+00:00
+113,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5496,66,5409,0,5562,0,False,"[""kb_get""]",[0.004634],2026-09-03T07:14:05.602511+00:00
+114,reflect,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,4676,350,0,0,5026,0,True,[],[],2026-09-03T07:14:12.239438+00:00
+115,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6820,281,1199,0,7101,0,True,"[""http_post"", ""http_post""]","[0.548932, 0.000999]",2026-09-03T07:14:18.228327+00:00
+116,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7438,178,6816,0,7616,0,True,"[""http_post"", ""http_post""]","[0.548293, 0.001007]",2026-09-03T07:14:21.915572+00:00
+117,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,9261,1728,7434,0,10989,0,True,"[""http_post"", ""http_post""]","[0.564267, 0.001032]",2026-09-03T07:14:47.256394+00:00
+118,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,12163,477,9257,0,12640,0,True,"[""http_post"", ""http_post""]","[0.580877, 0.001096]",2026-09-03T07:14:55.779869+00:00
+119,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14993,664,12159,0,15657,0,True,"[""http_post"", ""http_post""]","[0.550611, 0.001109]",2026-09-03T07:15:07.071796+00:00
+120,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,16485,854,14989,0,17339,0,True,"[""http_post"", ""http_post""]","[0.591536, 0.001183]",2026-09-03T07:15:20.550046+00:00
+121,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,19462,164,16481,0,19626,0,True,"[""http_post"", ""http_post""]","[0.576269, 0.001177]",2026-09-03T07:15:24.895961+00:00
+122,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,20773,180,19458,0,20953,0,True,"[""http_post"", ""http_post""]","[0.593389, 0.001273]",2026-09-03T07:15:28.885972+00:00
+123,reflect,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,21726,2290,4672,0,24016,0,True,[],[],2026-09-03T07:16:08.240597+00:00
+124,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,25694,61,1199,0,25755,0,False,"[""kb_get""]",[0.004175],2026-09-03T07:16:16.921272+00:00
+125,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,25769,61,25690,0,25830,0,False,"[""kb_list_dir""]",[0.00489],2026-09-03T07:16:18.380060+00:00
+126,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,25827,1849,25765,0,27676,0,True,"[""register_finding""]",[0.005955],2026-09-03T07:16:46.180216+00:00
+127,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,27678,73,25823,0,27751,0,True,"[""kb_get""]",[0.004944],2026-09-03T07:16:48.226766+00:00
+128,agent,exploitation,Exploitation of create_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,29500,534,27674,0,30034,0,True,[],[],2026-09-03T07:16:57.133625+00:00
+129,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,10347,349,9642,0,10696,0,True,[],[],2026-09-03T07:17:02.787578+00:00
+130,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3270,178,0,0,3448,0,False,"[""kb_get"", ""kb_list_dir"", ""kb_get""]","[0.006393, 0.000253, 2.7e-05]",2026-09-03T07:17:06.739001+00:00
+131,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3900,183,3266,0,4083,0,False,"[""kb_get"", ""kb_get""]","[0.00522, 5.1e-05]",2026-09-03T07:17:09.890687+00:00
+132,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6748,243,3896,0,6991,0,True,"[""login"", ""login""]","[0.105137, 0.000947]",2026-09-03T07:17:14.485169+00:00
+133,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6932,268,6744,0,7200,0,True,"[""kb_list_dir""]",[0.004765],2026-09-03T07:17:18.861626+00:00
+134,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7004,59,6928,0,7063,0,False,"[""kb_list_dir""]",[0.003899],2026-09-03T07:17:20.186207+00:00
+135,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7056,366,7000,0,7422,0,True,"[""http_post"", ""http_post""]","[0.550497, 0.00095]",2026-09-03T07:17:25.706885+00:00
+136,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7669,263,7052,0,7932,0,True,"[""kb_list_dir""]",[0.004133],2026-09-03T07:17:30.545845+00:00
+137,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,7787,69,7665,0,7856,0,False,"[""kb_list_dir""]",[0.004417],2026-09-03T07:17:32.058950+00:00
+138,reflect,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6017,555,0,0,6572,0,True,[],[],2026-09-03T07:17:41.999949+00:00
+139,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,8097,58,1222,0,8155,0,False,"[""kb_list_dir""]",[0.004637],2026-09-03T07:17:45.348560+00:00
+140,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,8153,39,8093,0,8192,0,False,"[""kb_list_dir""]",[0.004771],2026-09-03T07:17:46.393612+00:00
+141,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,8591,79,8149,0,8670,0,False,"[""kb_get""]",[0.004089],2026-09-03T07:17:48.124036+00:00
+142,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11541,358,8587,0,11899,0,True,"[""kb_get""]",[0.004366],2026-09-03T07:17:54.410384+00:00
+143,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14534,263,11537,0,14797,0,True,"[""kb_get""]",[0.004001],2026-09-03T07:17:59.449469+00:00
+144,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14908,563,14530,0,15471,0,True,"[""http_post"", ""http_post""]","[0.578347, 0.001167]",2026-09-03T07:18:08.057377+00:00
+145,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,17728,406,14904,0,18134,0,True,"[""http_post"", ""http_post""]","[0.5911, 0.001144]",2026-09-03T07:18:15.749121+00:00
+146,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,20552,358,17724,0,20910,0,True,"[""http_post"", ""http_post""]","[0.567918, 0.001137]",2026-09-03T07:18:22.887051+00:00
+147,reflect,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,21660,3195,6013,0,24855,0,True,[],[],2026-09-03T07:19:14.878990+00:00
+148,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,25430,65,1222,0,25495,0,False,"[""kb_get""]",[0.004577],2026-09-03T07:19:23.585031+00:00
+149,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,25511,55,25426,0,25566,0,False,"[""kb_list_dir""]",[0.004508],2026-09-03T07:19:24.955798+00:00
+150,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,25582,1893,25507,0,27475,0,True,"[""register_finding""]",[0.006007],2026-09-03T07:19:53.240622+00:00
+151,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,27480,92,25578,0,27572,0,True,"[""kb_get""]",[0.004936],2026-09-03T07:19:55.559417+00:00
+152,agent,exploitation,Exploitation of edit_post content XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,29365,565,27476,0,29930,0,True,[],[],2026-09-03T07:20:04.870366+00:00
+153,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11073,321,10343,0,11394,0,True,[],[],2026-09-03T07:20:10.163764+00:00
+154,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3283,219,0,0,3502,0,True,"[""kb_get"", ""kb_get"", ""kb_list_dir""]","[0.005184, 0.000353, 2.8e-05]",2026-09-03T07:20:14.698332+00:00
+155,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,3964,338,3279,0,4302,0,True,"[""http_post"", ""http_post""]","[0.554925, 0.000886]",2026-09-03T07:20:19.955497+00:00
+156,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,4645,175,3960,0,4820,0,True,"[""http_post"", ""http_post""]","[0.546848, 0.000987]",2026-09-03T07:20:23.585654+00:00
+157,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5376,237,4641,0,5613,0,True,"[""kb_list_dir""]",[0.004609],2026-09-03T07:20:28.043179+00:00
+158,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5498,60,5372,0,5558,0,False,"[""kb_get""]",[0.004482],2026-09-03T07:20:29.415534+00:00
+159,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5745,133,5494,0,5878,0,True,"[""kb_list_dir""]",[0.004785],2026-09-03T07:20:31.848883+00:00
+160,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5852,64,5741,0,5916,0,False,"[""kb_list_dir""]",[0.004802],2026-09-03T07:20:33.264009+00:00
+161,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,5908,62,5848,0,5970,0,False,"[""kb_list_dir""]",[0.004923],2026-09-03T07:20:34.612761+00:00
+162,reflect,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,4489,541,0,0,5030,0,True,[],[],2026-09-03T07:20:43.836585+00:00
+163,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6655,106,1235,0,6761,0,True,"[""kb_list_dir""]",[0.00423],2026-09-03T07:20:47.417242+00:00
+164,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6741,65,6651,0,6806,0,False,"[""kb_list_dir""]",[0.004126],2026-09-03T07:20:48.868802+00:00
+165,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,6964,94,6737,0,7058,0,True,"[""kb_get""]",[0.003845],2026-09-03T07:20:50.742078+00:00
+166,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,9938,600,6960,0,10538,0,True,"[""login"", ""login""]","[0.099205, 0.001312]",2026-09-03T07:21:00.358441+00:00
+167,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,10132,145,9934,0,10277,0,True,"[""http_post"", ""http_post""]","[0.54809, 0.001034]",2026-09-03T07:21:03.056218+00:00
+168,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,10555,570,10128,0,11125,0,True,"[""http_post"", ""http_post""]","[0.59407, 0.001044]",2026-09-03T07:21:12.173432+00:00
+169,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,13347,535,10551,0,13882,0,True,"[""http_get"", ""http_get""]","[0.68107, 0.001209]",2026-09-03T07:21:21.543226+00:00
+170,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,16056,399,13343,0,16455,0,True,"[""http_post"", ""http_post""]","[0.574145, 0.001197]",2026-09-03T07:21:29.172222+00:00
+171,reflect,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,17004,781,4485,0,17785,0,True,[],[],2026-09-03T07:21:45.186497+00:00
+172,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,19296,120,1235,0,19416,0,False,"[""http_post"", ""http_post""]","[0.586751, 0.001172]",2026-09-03T07:21:52.833686+00:00
+173,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,22056,339,19292,0,22395,0,True,"[""http_post"", ""http_post""]","[0.563209, 0.001155]",2026-09-03T07:21:59.652748+00:00
+174,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,22482,447,22052,0,22929,0,True,"[""http_post"", ""http_post""]","[0.549631, 0.001277]",2026-09-03T07:22:07.325528+00:00
+175,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,22901,210,22478,0,23111,0,True,"[""http_post"", ""http_post""]","[0.553176, 0.001241]",2026-09-03T07:22:11.603869+00:00
+176,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,23319,309,22897,0,23628,0,True,"[""http_post"", ""http_post""]","[0.577808, 0.001306]",2026-09-03T07:22:17.327767+00:00
+177,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,26109,2417,23315,0,28526,0,True,"[""http_post"", ""http_post""]","[0.582988, 0.001264]",2026-09-03T07:22:54.653357+00:00
+178,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,28934,281,26105,0,29215,0,True,"[""http_post"", ""http_post""]","[0.592108, 0.00134]",2026-09-03T07:23:00.796701+00:00
+179,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,31809,1375,28930,0,33184,0,True,"[""register_finding""]",[0.005768],2026-09-03T07:23:23.365371+00:00
+180,reflect,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,31199,1264,17000,0,32463,0,True,[],[],2026-09-03T07:23:47.176868+00:00
+181,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,33432,65,17248,0,33497,0,False,"[""kb_get""]",[0.00591],2026-09-03T07:23:53.998672+00:00
+182,agent,exploitation,Exploitation of request_friend username XSS,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,34621,583,33428,0,35204,0,True,[],[],2026-09-03T07:24:03.638252+00:00
+183,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,11828,170,11069,0,11998,0,True,[],[],2026-09-03T07:24:06.851990+00:00
+184,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,12912,63,11824,0,12975,0,False,[],[],2026-09-03T07:24:08.503389+00:00
+185,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,14718,54,12908,0,14772,0,False,[],[],2026-09-03T07:24:10.158282+00:00
+186,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,16572,59,14714,0,16631,0,False,[],[],2026-09-03T07:24:11.931336+00:00
+187,planner,,,unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_M,17761,2755,16568,0,20516,0,True,[],[],2026-09-03T07:24:52.087079+00:00

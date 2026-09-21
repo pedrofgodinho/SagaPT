@@ -1,0 +1,4 @@
+run_id,endpoint,vulnerability,poc
+20260903-0800-0008,`POST /create_post` (content),Stored Cross-Site Scripting,"`<script>alert(1)</script>` stored and reflected unescaped in `<p class=""card-text h5"">`"
+20260903-0800-0008,`GET /users?search=X` (search),Reflected Cross-Site Scripting,`<script>alert(1)</script>` reflected unescaped in `<h6>` element
+20260903-0800-0008,`POST /request_friend` (username),Reflected Cross-Site Scripting,"`<script>alert(1)</script>` reflected unescaped in `<div class=""flash mb-2 error"">`"

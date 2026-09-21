@@ -1,0 +1,7 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and authentication,2026-09-01T15:17:17.003239+00:00,2026-09-01T15:19:38.343600+00:00,141.340361,17,20,1,1,0,0,False,291447,6869,223941,0,298316
+1,dast,DAST query parameter endpoints,2026-09-01T15:19:50.141005+00:00,2026-09-01T15:20:46.790863+00:00,56.649858,8,19,0,6,0,0,False,62018,3139,45884,0,65157
+2,dast,DAST search and content parameters,2026-09-01T15:20:54.607954+00:00,2026-09-01T15:22:36.502629+00:00,101.894675,10,20,1,5,0,0,False,139447,4851,66483,0,144298
+3,dast,DAST settings form fields,2026-09-01T15:23:10.200771+00:00,2026-09-01T15:24:01.297478+00:00,51.096707,6,12,0,0,0,0,False,42265,2863,25316,0,45128
+4,exploitation,Exploitation of profile username SQLi,2026-09-01T15:24:16.185469+00:00,2026-09-01T15:27:21.613807+00:00,185.428338,31,35,1,1,0,0,False,483818,7296,336309,0,491114
+5,exploitation,Exploitation of remaining SQLi endpoints,2026-09-01T15:27:29.521340+00:00,2026-09-01T15:35:59.266388+00:00,509.745048,51,76,2,10,0,0,False,1400699,19303,1051000,0,1420002

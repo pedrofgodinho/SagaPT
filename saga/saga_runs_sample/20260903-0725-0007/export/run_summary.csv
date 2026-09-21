@@ -1,0 +1,2 @@
+run_id,name,target,status,started_at,ended_at,duration_s,num_agent_invocations,invocation_sequence,total_llm_calls,total_tool_calls,total_kb_findings_registered,total_reflections,total_retries,num_hit_hard_cap,total_input_tokens,total_output_tokens,total_cached_input_tokens,total_reasoning_tokens,total_tokens,num_findings
+20260903-0725-0007,XSS #3,http://www.hackergram.com,completed,2026-09-03T07:25:02.403312+00:00,2026-09-03T08:00:41.765558+00:00,2139.362246,7,"recon,dast,dast,dast,exploitation,exploitation,exploitation",141,99,14,12,0,0,2536319,87559,1908312,0,2623878,7

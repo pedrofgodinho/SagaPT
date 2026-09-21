@@ -1,0 +1,6 @@
+run_id,endpoint,vulnerability,poc
+20260903-1121-0014,`GET /users?search=`,Reflected XSS,`<script>alert(1)</script>` reflected in `<h6>0 matches for <script>alert(1)</script></h6>`
+20260903-1121-0014,`GET /friends?username=admin&search=`,Reflected XSS,`<script>alert(1)</script>` reflected in `<h6>0 matches for <script>alert(1)</script></h6>`
+20260903-1121-0014,`POST /create_post`,Stored XSS,"`<script>alert(1)</script>` stored and reflected in `<p class=""card-text h5""><script>alert(1)</script></p>`"
+20260903-1121-0014,`POST /edit_post`,Stored XSS,"`<script>alert(1)</script>` stored and reflected in `<p class=""card-text h5""><script>alert(1)</script></p>`"
+20260903-1121-0014,`POST /request_friend`,Reflected XSS,"`<script>alert(1)</script>` reflected in `<div class=""flash mb-2 error"">@<script>alert(1)</script> does not exist</div>`"

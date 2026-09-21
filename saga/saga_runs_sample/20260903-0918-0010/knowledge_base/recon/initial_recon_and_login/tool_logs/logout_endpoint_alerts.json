@@ -1,0 +1,1 @@
+[{"method": "GET", "evidence": "session", "pluginId": "10112", "confidence": "High", "url": "http://www.hackergram.com/logout", "param": "session", "attack": "", "name": "Session Management Response Identified", "risk": "Informational"}]

@@ -1,0 +1,8 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and authentication,2026-09-03T06:34:57.517193+00:00,2026-09-03T06:37:49.865360+00:00,172.348167,30,32,1,1,0,0,False,414658,7052,312208,0,421710
+1,dast,DAST on search parameters,2026-09-03T06:38:01.128228+00:00,2026-09-03T06:39:11.278809+00:00,70.150581,8,14,1,2,0,0,False,123501,3502,92411,0,127003
+2,dast,DAST on profile and post parameters,2026-09-03T06:39:18.252021+00:00,2026-09-03T06:42:43.780597+00:00,205.528576,15,22,1,0,0,0,False,195498,11942,152216,0,207440
+3,dast,DAST on POST form fields,2026-09-03T06:42:49.481645+00:00,2026-09-03T06:44:40.385710+00:00,110.904065,8,20,1,4,0,0,False,231238,5802,182082,0,237040
+4,dast,DAST on settings and other form fields,2026-09-03T06:44:47.074792+00:00,2026-09-03T06:47:43.138338+00:00,176.063546,6,36,4,0,0,0,False,359782,10076,315871,0,369858
+5,dast,DAST on remaining form fields,2026-09-03T06:48:09.838666+00:00,2026-09-03T06:51:06.770010+00:00,176.931344,14,26,2,2,0,0,False,537956,8531,440662,0,546487
+6,exploitation,Exploitation of all confirmed XSS vulnerabilities,2026-09-03T06:51:25.798165+00:00,2026-09-03T06:56:34.918100+00:00,309.119935,17,55,3,6,0,0,False,875348,14895,704424,0,890243

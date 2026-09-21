@@ -1,0 +1,9 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and authentication setup,2026-09-02T22:19:33.723673+00:00,2026-09-02T22:21:27.157068+00:00,113.433395,14,18,1,1,0,0,False,216581,4861,127207,0,221442
+1,dast,DAST on profile username parameter,2026-09-02T22:21:37.762980+00:00,2026-09-02T22:22:13.540924+00:00,35.777944,3,10,0,1,0,0,False,54370,2032,44326,0,56402
+2,dast,DAST on users search and friends parameters,2026-09-02T22:22:17.788539+00:00,2026-09-02T22:23:11.500177+00:00,53.711638,6,14,0,2,0,0,False,61832,3102,46799,0,64934
+3,dast,DAST on posts endpoints,2026-09-02T22:23:15.624217+00:00,2026-09-02T22:25:40.100887+00:00,144.47667,17,27,2,2,0,0,False,423077,6928,346224,0,430005
+4,dast,DAST on messaging and settings parameters,2026-09-02T22:25:44.526967+00:00,2026-09-02T22:27:43.007797+00:00,118.48083,17,28,1,2,0,0,False,303990,5612,232246,0,309602
+5,dast,DAST on friend forms and login,2026-09-02T22:27:47.229068+00:00,2026-09-02T22:30:26.292453+00:00,159.063385,13,30,2,4,0,0,False,374594,7914,300398,0,382508
+6,exploitation,Exploitation of login SQLi for data extraction,2026-09-02T22:30:44.609983+00:00,2026-09-02T22:37:52.824747+00:00,428.214764,40,50,4,0,0,0,False,1713581,17607,1444990,0,1731188
+7,exploitation,Exploitation of profile SQLi for data extraction,2026-09-02T22:38:01.451769+00:00,2026-09-02T22:42:03.481787+00:00,242.030018,39,44,1,1,0,0,False,581093,8933,370448,0,590026

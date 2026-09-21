@@ -1,0 +1,18 @@
+services:
+  test-site:
+    image: nginx:alpine
+    volumes:
+      - ./saga/tests/site:/usr/share/nginx/html:ro
+    ports:
+      - "8888:80"
+
+  zaproxy:
+    image: zaproxy/zap-stable
+    command: >
+      zap.sh -daemon
+      -host 0.0.0.0 -port 8080
+      -config api.disablekey=true
+      -config api.addrs.addr.name=.*
+      -config api.addrs.addr.regex=true
+    ports:
+      - "8080:8080"

@@ -1,0 +1,1 @@
+[{"method": "GET", "evidence": "", "pluginId": "10031", "confidence": "Low", "url": "http://www.hackergram.com/direct_messages?username=mr_robot", "param": "username", "attack": "", "name": "User Controllable HTML Element Attribute (Potential XSS)", "risk": "Informational"}]

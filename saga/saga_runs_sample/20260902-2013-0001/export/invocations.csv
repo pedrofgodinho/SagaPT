@@ -1,0 +1,8 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and authentication setup,2026-09-02T20:13:58.697671+00:00,2026-09-02T20:15:48.648030+00:00,109.950359,7,12,1,1,0,0,False,162318,5720,118554,0,168038
+1,dast,DAST on username parameter endpoints,2026-09-02T20:15:59.409420+00:00,2026-09-02T20:16:41.146803+00:00,41.737383,4,11,0,3,0,0,False,55623,2322,44503,0,57945
+2,dast,DAST on search parameter endpoints,2026-09-02T20:16:45.784865+00:00,2026-09-02T20:18:07.726134+00:00,81.941269,4,15,1,2,0,0,False,93415,4511,57351,0,97926
+3,dast,DAST on id parameter endpoints,2026-09-02T20:18:11.964881+00:00,2026-09-02T20:18:59.690815+00:00,47.725934,5,12,0,2,0,0,False,55286,2687,41046,0,57973
+4,dast,DAST on requests GET parameters,2026-09-02T20:19:06.103855+00:00,2026-09-02T20:19:57.532273+00:00,51.428418,4,10,0,1,0,0,False,54179,3056,44206,0,57235
+5,dast,DAST on POST endpoint parameters,2026-09-02T20:20:03.785383+00:00,2026-09-02T20:23:53.643911+00:00,229.858528,19,31,4,7,0,0,False,769419,11119,660716,0,780538
+6,exploitation,Exploitation of SQLi for data extraction and admin password,2026-09-02T20:24:18.465191+00:00,2026-09-02T20:27:06.695092+00:00,168.229901,27,35,1,1,0,0,False,478952,6738,359798,0,485690

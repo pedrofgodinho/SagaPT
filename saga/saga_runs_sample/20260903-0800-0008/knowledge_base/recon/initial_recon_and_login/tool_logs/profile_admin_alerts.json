@@ -1,0 +1,1 @@
+[{"method": "GET", "evidence": "<form class=\"form-horizontal\" action=\"/remove_request\" method=\"post\">", "pluginId": "10202", "confidence": "Low", "url": "http://www.hackergram.com/profile?username=admin", "param": "", "attack": "", "name": "Absence of Anti-CSRF Tokens", "risk": "Medium"}]

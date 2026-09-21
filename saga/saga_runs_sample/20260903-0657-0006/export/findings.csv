@@ -1,0 +1,5 @@
+run_id,endpoint,vulnerability,poc
+20260903-0657-0006,`POST /create_post`,Stored XSS,"`<script>alert(1)</script>` reflected unescaped in `<p class=""card-text h5"">...</p>`"
+20260903-0657-0006,`POST /edit_post`,Stored XSS,"`<script>alert(1)</script>` reflected unescaped in `<p class=""card-text h5"">...</p>`"
+20260903-0657-0006,`GET /users?search=`,Reflected XSS,`<script>alert(1)</script>` reflected unescaped in `<h6>0 matches for ...</h6>`
+20260903-0657-0006,`POST /request_friend`,Reflected XSS,"`<script>alert(1)</script>` reflected unescaped in `<div class=""flash mb-2 error"">@... does not exist</div>`"

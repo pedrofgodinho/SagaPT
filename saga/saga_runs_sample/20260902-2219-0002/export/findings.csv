@@ -1,0 +1,12 @@
+run_id,endpoint,vulnerability,poc
+20260902-2219-0002,GET /profile?username=,SQL Injection,`mr_robot'`
+20260902-2219-0002,POST /login (username),SQL Injection,`mr_robot' --`
+20260902-2219-0002,POST /login (password),SQL Injection,`'`
+20260902-2219-0002,GET /users?search=,SQL Injection,`'`
+20260902-2219-0002,GET /friends?username=,SQL Injection,`'%20trash`
+20260902-2219-0002,GET /posts?search=,SQL Injection,`'`
+20260902-2219-0002,POST /create_post (content),SQL Injection,`content='`
+20260902-2219-0002,GET /direct_messages?username=,SQL Injection,`'`
+20260902-2219-0002,POST /direct_messages (username),SQL Injection,`'`
+20260902-2219-0002,POST /request_friend (username),SQL Injection,`username='`
+20260902-2219-0002,POST /remove_request (username),SQL Injection,`username='`

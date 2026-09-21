@@ -1,0 +1,27 @@
+# Secrets (fill in saga.secrets.env from saga.secrets.env.example)
+saga.secrets.env
+
+# Python
+__pycache__/
+*.py[oc]
+.venv/
+build/
+dist/
+wheels/
+*.egg-info
+
+# SagaPT working data (the curated sample lives in saga/saga_runs_sample/)
+saga/saga_runs/
+saga/.pytest_cache/
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Frontend
+frontend/node_modules/
+frontend/.svelte-kit/
+frontend/build/
+.env
+.env.*
+!.env.example

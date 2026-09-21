@@ -1,0 +1,7 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and authentication,2026-09-01T15:37:32.971805+00:00,2026-09-01T15:39:26.229120+00:00,113.257315,16,16,1,0,0,0,False,164117,4331,71248,0,168448
+1,dast,DAST on profile friends requests direct_messages SQLi,2026-09-01T15:39:55.146949+00:00,2026-09-01T15:42:22.687013+00:00,147.540064,17,31,2,4,0,0,False,379031,5939,266015,0,384970
+2,dast,DAST on users messages posts friends_search SQLi,2026-09-01T15:42:27.977872+00:00,2026-09-01T15:44:21.037244+00:00,113.059372,10,21,1,2,0,0,False,148994,5825,110559,0,154819
+3,dast,DAST on POST endpoints login signup create_post edit_post SQLi,2026-09-01T15:44:27.468447+00:00,2026-09-01T15:48:53.226323+00:00,265.757876,22,42,3,1,0,0,False,744583,11291,569665,0,755874
+4,dast,DAST on remaining POST endpoints settings direct_messages friends SQLi,2026-09-01T15:48:58.453461+00:00,2026-09-01T15:52:36.812973+00:00,218.359512,25,48,3,3,0,0,False,640707,8957,492299,0,649664
+5,exploitation,Exploitation SQLi data extraction admin password,2026-09-01T15:52:59.793807+00:00,2026-09-01T15:57:20.407648+00:00,260.613841,29,36,2,1,0,0,False,600162,10066,404200,0,610228

@@ -1,0 +1,10 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,recon,Initial recon and login,2026-09-03T06:58:11.183050+00:00,2026-09-03T07:00:25.744779+00:00,134.561729,18,22,1,1,0,0,False,288069,5355,178243,0,293424
+1,dast,XSS test on GET query parameters,2026-09-03T07:00:39.085837+00:00,2026-09-03T07:01:42.832522+00:00,63.746685,8,14,0,1,0,0,False,57756,3664,43086,0,61420
+2,dast,XSS test on POST form fields,2026-09-03T07:01:49.815164+00:00,2026-09-03T07:04:56.192039+00:00,186.376875,17,32,3,2,0,0,False,699113,8316,575181,0,707429
+3,dast,XSS test on login and friend request fields,2026-09-03T07:05:08.188763+00:00,2026-09-03T07:06:44.725374+00:00,96.536611,9,17,1,1,0,0,False,191253,4643,127865,0,195896
+4,dast,XSS test on remaining endpoints,2026-09-03T07:07:16.113901+00:00,2026-09-03T07:11:42.157293+00:00,266.043392,11,27,2,0,0,0,False,356067,16269,301231,0,372336
+5,exploitation,Exploitation of users search XSS,2026-09-03T07:11:55.522223+00:00,2026-09-03T07:13:43.701979+00:00,108.179756,4,9,0,1,0,0,False,72002,7063,57768,0,79065
+6,exploitation,Exploitation of create_post content XSS,2026-09-03T07:13:49.123099+00:00,2026-09-03T07:16:57.136236+00:00,188.013137,8,22,2,1,0,0,False,306362,10547,231189,0,316909
+7,exploitation,Exploitation of edit_post content XSS,2026-09-03T07:17:02.789467+00:00,2026-09-03T07:20:04.873418+00:00,182.083951,5,23,2,1,0,0,False,315515,10173,238519,0,325688
+8,exploitation,Exploitation of request_friend username XSS,2026-09-03T07:20:10.166318+00:00,2026-09-03T07:24:03.641813+00:00,233.475495,14,27,3,1,0,0,False,438310,12534,338339,0,450844

