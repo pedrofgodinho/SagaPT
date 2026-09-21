@@ -2,7 +2,7 @@
 
 An LLM-driven web-application penetration-testing tool, built for a master's
 thesis. A **Planner** LLM orchestrates specialised security agents (Recon, DAST,
-Exploitation, Summarizer) in a two-level [LangGraph](https://langchain-ai.github.io/langgraph/),
+Exploitation) in a two-level [LangGraph](https://langchain-ai.github.io/langgraph/),
 driving OWASP ZAP against a target web app and recording findings in a shared
 knowledge base.
 
