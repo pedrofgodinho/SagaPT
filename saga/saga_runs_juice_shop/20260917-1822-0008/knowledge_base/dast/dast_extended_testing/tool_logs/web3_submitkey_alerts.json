@@ -1,0 +1,1 @@
+[{"method": "POST", "evidence": "Access-Control-Allow-Origin: *", "pluginId": "10098", "confidence": "Medium", "url": "http://juiceshop.local:3000/rest/web3/submitKey", "param": "", "attack": "", "name": "Cross-Domain Misconfiguration", "risk": "Medium"}]

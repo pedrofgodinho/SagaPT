@@ -1,0 +1,1 @@
+[{"method": "GET", "evidence": "Access-Control-Allow-Origin: *", "pluginId": "10098", "confidence": "Medium", "url": "http://juiceshop.local:3000/api/products?q=test%27%20AND%201%3D2--%20", "param": "", "attack": "", "name": "Cross-Domain Misconfiguration", "risk": "Medium"}]
