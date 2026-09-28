@@ -1,0 +1,2 @@
+order_index,agent,execution_name,start_ts,end_ts,duration_s,num_tool_calls,num_kb_tool_calls,num_reflections,num_findings_registered,retry_count,num_empty_retries,hit_hard_cap,input_tokens,output_tokens,cached_input_tokens,reasoning_tokens,total_tokens
+0,single,Complete HackerGram Security Assessment,2026-09-04T19:32:26.976450+00:00,2026-09-04T19:41:53.738403+00:00,566.761953,70,93,4,6,0,0,False,3546006,18422,3141680,0,3564428

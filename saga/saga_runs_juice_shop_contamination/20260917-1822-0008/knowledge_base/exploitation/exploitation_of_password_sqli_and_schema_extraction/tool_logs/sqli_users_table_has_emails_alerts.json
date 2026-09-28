@@ -1,0 +1,1 @@
+[{"method": "POST", "evidence": "password", "pluginId": "10111", "confidence": "High", "url": "http://juiceshop.local:3000/rest/user/login", "param": "email", "attack": "", "name": "Authentication Request Identified", "risk": "Informational"}]
